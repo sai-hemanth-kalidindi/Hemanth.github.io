@@ -7,64 +7,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
       background-color: #0b1120;
       color: #ecf0f1;
+      line-height: 1.6;
     }
     header {
-      background: #004953;
-      color: #fff;
-      padding: 30px 20px;
+      background-color: #004953;
       text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #d4af37;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #fff;
     }
     section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
     }
-    h1, h2 {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
       color: #d4af37;
-    }
-    h3 {
-      color: #ffffff;
+      text-align: center;
     }
     ul {
       padding-left: 20px;
     }
-    .contact, .download {
-      text-align: center;
-      margin-top: 20px;
-    }
-    footer {
-      background: #004953;
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-    }
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
     }
     .project-item {
       background-color: #1c2c3a;
-      padding: 20px;
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
     }
-    .project-item ul {
-      list-style: disc;
-      padding-left: 20px;
+    .project-item:hover {
+      transform: translateY(-5px);
     }
     .project-item h3 {
       color: #d4af37;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
     }
     .project-item p {
+      font-size: 0.95rem;
       color: #aaa;
+    }
+    .project-item ul li {
+      margin-left: 1em;
+      margin-bottom: 10px;
+      list-style: disc;
     }
     a {
       color: #d4af37;
@@ -72,6 +81,24 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    .download, .contact {
+      text-align: center;
+      margin-top: 30px;
+    }
+    footer {
+      background-color: #004953;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 40px 15px;
+      }
     }
   </style>
 </head>
@@ -83,7 +110,7 @@
 
   <section>
     <h2>About Me</h2>
-    <p>I'm currently pursuing a Master's in Business Analytics at the University at Albany. I specialize in translating data into insights using Python, SQL, Tableau, and Power BI. Previously, I worked as a Business Analyst in real estate, building tools and models that improved decision-making and operational efficiency.</p>
+    <p style="text-align:center; max-width: 800px; margin: auto;">I'm currently pursuing a Master's in Business Analytics at the University at Albany. With a background in Computer Science and real estate analytics, I specialize in turning raw data into business insights using Python, SQL, Power BI, and Tableau.</p>
   </section>
 
   <section>
@@ -91,7 +118,7 @@
     <ul>
       <li><strong>Languages/Tools:</strong> Python, R, SQL, Tableau, Power BI, Excel</li>
       <li><strong>Techniques:</strong> Predictive Modeling, Forecasting, Clustering, Regression, Data Wrangling</li>
-      <li><strong>Business Domains:</strong> Traffic Safety, Real Estate Analytics, Customer Segmentation, Service Optimization</li>
+      <li><strong>Domains:</strong> Urban Planning, Real Estate Analytics, Customer Behavior, Public Safety</li>
     </ul>
   </section>
 
@@ -102,44 +129,40 @@
         <h3>NYC Traffic Fatalities Analysis</h3>
         <p><strong>Tools:</strong> Python, SQL, Tableau</p>
         <ul>
-          <li>Analyzed spatial and temporal trends in NYC crash data to identify fatality hotspots.</li>
-          <li>Built predictive models and Tableau dashboards for city planning and public safety.</li>
+          <li>Explored fatal crash patterns across neighborhoods using Vision Zero data.</li>
+          <li>Created predictive models and Tableau dashboards for city agencies.</li>
         </ul>
       </div>
-
       <div class="project-item">
-        <h3>Formula 1 Crash Analysis (1950–2020)</h3>
-        <p><strong>Tools:</strong> Python, Pandas, Regression</p>
+        <h3>Formula 1 Crash Trends (1950–2020)</h3>
+        <p><strong>Tools:</strong> Python, Regression</p>
         <ul>
-          <li>Explored crash trends in historical F1 data using regression and time series analysis.</li>
-          <li>Assessed safety innovation impacts on retirement rates and crash severity.</li>
+          <li>Analyzed F1 crash retirements and safety improvements using historical data.</li>
+          <li>Assessed decade-wise safety changes and team-specific crash patterns.</li>
         </ul>
       </div>
-
       <div class="project-item">
-        <h3>311 Service Wait Time Prediction</h3>
-        <p><strong>Tools:</strong> Python, Random Forest, Feature Engineering</p>
+        <h3>311 Complaint Resolution Time Prediction</h3>
+        <p><strong>Tools:</strong> Python, Random Forest</p>
         <ul>
-          <li>Predicted complaint resolution times based on descriptors, zip code, and time-based features.</li>
-          <li>Improved model accuracy using domain-informed feature engineering.</li>
+          <li>Predicted wait times using complaint type, zip code, and severity.</li>
+          <li>Engineered features like service category length and time-of-day flags.</li>
         </ul>
       </div>
-
       <div class="project-item">
         <h3>Real Estate Investment Risk Modeling</h3>
-        <p><strong>Tools:</strong> Excel, Power BI, R</p>
+        <p><strong>Tools:</strong> Excel, Power BI</p>
         <ul>
-          <li>Calculated ROI and NPV for property investments using market trend data.</li>
-          <li>Created Power BI dashboards to visualize risk-adjusted returns.</li>
+          <li>Calculated ROI/NPV to identify optimal property portfolios.</li>
+          <li>Visualized investment outcomes through dynamic dashboards.</li>
         </ul>
       </div>
-
       <div class="project-item">
         <h3>Customer Segmentation Strategy</h3>
-        <p><strong>Tools:</strong> R, SQL, Tableau</p>
+        <p><strong>Tools:</strong> R, Tableau</p>
         <ul>
-          <li>Clustered customer profiles using k-means based on transaction and behavioral data.</li>
-          <li>Designed and visualized marketing strategies using Tableau dashboards.</li>
+          <li>Segmented real estate customers using k-means clustering.</li>
+          <li>Designed targeted marketing based on behavioral traits.</li>
         </ul>
       </div>
     </div>
@@ -148,7 +171,7 @@
   <section>
     <h2>Resume</h2>
     <div class="download">
-      <p><a href="Sai_Hemanth_Resume_Structured.docx" download>📥 Download My Resume (DOCX)</a></p>
+      <p><a href="Sai_Hemanth_Resume_Structured.docx" download>📄 Download My Resume</a></p>
     </div>
   </section>
 
@@ -161,7 +184,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Sai Hemanth Varma Kalidindi. All rights reserved.</p>
+    <p>&copy; 2025 Sai Hemanth Varma Kalidindi | Designed with ✨ and Data</p>
   </footer>
 </body>
 </html>
