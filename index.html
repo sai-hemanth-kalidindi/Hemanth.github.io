@@ -48,6 +48,23 @@
       padding: 10px;
       margin-top: 20px;
     }
+    .project-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background-color: #fefefe;
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .project-card a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -72,29 +89,56 @@
 
   <section>
     <h2>Projects</h2>
-    <h3>🔧 Predicting Equipment Failures</h3>
-    <ul>
-      <li>Used Random Forest and XGBoost in Python to predict industrial equipment failures</li>
-      <li>Cleaned and analyzed sensor data for better model performance</li>
-    </ul>
 
-    <h3>🗺️ NYC Traffic Fatalities Analysis</h3>
-    <ul>
-      <li>Explored NYC Open Data to analyze traffic-related fatalities</li>
-      <li>Built Tableau dashboards and predictive models to highlight high-risk zones</li>
-    </ul>
+    <div class="project-card">
+      <h3>NYC Traffic Fatalities Analysis</h3>
+      <p><strong>Tools:</strong> Python, SQL, Tableau</p>
+      <ul>
+        <li>Analyzed traffic-related fatalities using NYC Open Data to uncover spatial and temporal patterns.</li>
+        <li>Built predictive models to identify high-risk zones.</li>
+        <li>Developed Tableau dashboards for stakeholder communication and policy insights.</li>
+      </ul>
+    </div>
 
-    <h3>🏘️ Real Estate Investment Risk</h3>
-    <ul>
-      <li>Calculated ROI and NPV using Excel and R</li>
-      <li>Visualized investment options in Power BI for profitability insights</li>
-    </ul>
+    <div class="project-card">
+      <h3>Formula 1 Crash Analysis (1950–2020)</h3>
+      <p><strong>Tools:</strong> Python, Pandas, Regression Models</p>
+      <ul>
+        <li>Explored crash-related retirements and safety innovations across F1 history.</li>
+        <li>Applied regression to evaluate factors influencing crash severity.</li>
+        <li>Connected safety improvements with long-term performance trends.</li>
+      </ul>
+    </div>
 
-    <h3>📊 Customer Segmentation</h3>
-    <ul>
-      <li>Clustered real estate clients using k-means in R</li>
-      <li>Visualized segments in Tableau for better marketing targeting</li>
-    </ul>
+    <div class="project-card">
+      <h3>311 Service Wait Time Prediction</h3>
+      <p><strong>Tools:</strong> Python, Random Forest, Feature Engineering</p>
+      <ul>
+        <li>Predicted service response times using complaint types and timing features.</li>
+        <li>Engineered new features like zip code groups and complaint severity.</li>
+        <li>Tested models and optimized accuracy through exploratory data analysis.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Real Estate Investment Risk Analysis</h3>
+      <p><strong>Tools:</strong> Excel, Power BI, R</p>
+      <ul>
+        <li>Performed ROI and NPV modeling for real estate investment scenarios.</li>
+        <li>Visualized portfolio opportunities to support strategic decision-making.</li>
+        <li>Increased profitability through targeted investment recommendations.</li>
+      </ul>
+    </div>
+
+    <div class="project-card">
+      <h3>Customer Segmentation for Marketing Strategy</h3>
+      <p><strong>Tools:</strong> R, SQL, Tableau</p>
+      <ul>
+        <li>Segmented real estate customers using k-means clustering.</li>
+        <li>Created targeted marketing strategies based on behavioral clusters.</li>
+        <li>Visualized segments in Tableau for campaign optimization.</li>
+      </ul>
+    </div>
   </section>
 
   <section>
