@@ -4,65 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sai Hemanth Varma | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #0b1120;
+      color: #ecf0f1;
     }
     header {
-      background: #222;
+      background: #004953;
       color: #fff;
-      padding: 20px;
+      padding: 30px 20px;
       text-align: center;
     }
     section {
-      padding: 20px;
-      max-width: 900px;
+      padding: 40px 20px;
+      max-width: 1000px;
       margin: auto;
-      background: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
     }
     h1, h2 {
-      color: #444;
+      color: #d4af37;
+    }
+    h3 {
+      color: #ffffff;
     }
     ul {
       padding-left: 20px;
     }
-    .contact {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .download {
+    .contact, .download {
       text-align: center;
       margin-top: 20px;
     }
     footer {
-      background: #222;
+      background: #004953;
       color: #fff;
       text-align: center;
-      padding: 10px;
-      margin-top: 20px;
+      padding: 20px 10px;
     }
-    .project-card {
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      background-color: #fefefe;
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
-    .project-card h3 {
-      margin-top: 0;
+    .project-item {
+      background-color: #1c2c3a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
-    .project-card a {
-      color: #0066cc;
+    .project-item ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    .project-item h3 {
+      color: #d4af37;
+    }
+    .project-item p {
+      color: #aaa;
+    }
+    a {
+      color: #d4af37;
       text-decoration: none;
     }
-    .project-card a:hover {
+    a:hover {
       text-decoration: underline;
     }
   </style>
@@ -75,69 +83,65 @@
 
   <section>
     <h2>About Me</h2>
-    <p>I'm currently pursuing a Master's in Business Analytics at University at Albany and hold a Bachelor's in Computer Science. I specialize in turning data into actionable insights using tools like Python, SQL, Power BI, and Tableau. I have prior experience as a Business Analyst in the real estate industry.</p>
+    <p>I'm currently pursuing a Master's in Business Analytics at the University at Albany. I specialize in translating data into insights using Python, SQL, Tableau, and Power BI. Previously, I worked as a Business Analyst in real estate, building tools and models that improved decision-making and operational efficiency.</p>
   </section>
 
   <section>
     <h2>Skills</h2>
     <ul>
-      <li><strong>Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel</li>
-      <li><strong>Techniques:</strong> Forecasting, Optimization, Predictive Analytics, Text Mining</li>
-      <li><strong>Business Areas:</strong> BI, Strategic Marketing, Financial Modeling</li>
+      <li><strong>Languages/Tools:</strong> Python, R, SQL, Tableau, Power BI, Excel</li>
+      <li><strong>Techniques:</strong> Predictive Modeling, Forecasting, Clustering, Regression, Data Wrangling</li>
+      <li><strong>Business Domains:</strong> Traffic Safety, Real Estate Analytics, Customer Segmentation, Service Optimization</li>
     </ul>
   </section>
 
   <section>
     <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-item">
+        <h3>NYC Traffic Fatalities Analysis</h3>
+        <p><strong>Tools:</strong> Python, SQL, Tableau</p>
+        <ul>
+          <li>Analyzed spatial and temporal trends in NYC crash data to identify fatality hotspots.</li>
+          <li>Built predictive models and Tableau dashboards for city planning and public safety.</li>
+        </ul>
+      </div>
 
-    <div class="project-card">
-      <h3>NYC Traffic Fatalities Analysis</h3>
-      <p><strong>Tools:</strong> Python, SQL, Tableau</p>
-      <ul>
-        <li>Analyzed traffic-related fatalities using NYC Open Data to uncover spatial and temporal patterns.</li>
-        <li>Built predictive models to identify high-risk zones.</li>
-        <li>Developed Tableau dashboards for stakeholder communication and policy insights.</li>
-      </ul>
-    </div>
+      <div class="project-item">
+        <h3>Formula 1 Crash Analysis (1950–2020)</h3>
+        <p><strong>Tools:</strong> Python, Pandas, Regression</p>
+        <ul>
+          <li>Explored crash trends in historical F1 data using regression and time series analysis.</li>
+          <li>Assessed safety innovation impacts on retirement rates and crash severity.</li>
+        </ul>
+      </div>
 
-    <div class="project-card">
-      <h3>Formula 1 Crash Analysis (1950–2020)</h3>
-      <p><strong>Tools:</strong> Python, Pandas, Regression Models</p>
-      <ul>
-        <li>Explored crash-related retirements and safety innovations across F1 history.</li>
-        <li>Applied regression to evaluate factors influencing crash severity.</li>
-        <li>Connected safety improvements with long-term performance trends.</li>
-      </ul>
-    </div>
+      <div class="project-item">
+        <h3>311 Service Wait Time Prediction</h3>
+        <p><strong>Tools:</strong> Python, Random Forest, Feature Engineering</p>
+        <ul>
+          <li>Predicted complaint resolution times based on descriptors, zip code, and time-based features.</li>
+          <li>Improved model accuracy using domain-informed feature engineering.</li>
+        </ul>
+      </div>
 
-    <div class="project-card">
-      <h3>311 Service Wait Time Prediction</h3>
-      <p><strong>Tools:</strong> Python, Random Forest, Feature Engineering</p>
-      <ul>
-        <li>Predicted service response times using complaint types and timing features.</li>
-        <li>Engineered new features like zip code groups and complaint severity.</li>
-        <li>Tested models and optimized accuracy through exploratory data analysis.</li>
-      </ul>
-    </div>
+      <div class="project-item">
+        <h3>Real Estate Investment Risk Modeling</h3>
+        <p><strong>Tools:</strong> Excel, Power BI, R</p>
+        <ul>
+          <li>Calculated ROI and NPV for property investments using market trend data.</li>
+          <li>Created Power BI dashboards to visualize risk-adjusted returns.</li>
+        </ul>
+      </div>
 
-    <div class="project-card">
-      <h3>Real Estate Investment Risk Analysis</h3>
-      <p><strong>Tools:</strong> Excel, Power BI, R</p>
-      <ul>
-        <li>Performed ROI and NPV modeling for real estate investment scenarios.</li>
-        <li>Visualized portfolio opportunities to support strategic decision-making.</li>
-        <li>Increased profitability through targeted investment recommendations.</li>
-      </ul>
-    </div>
-
-    <div class="project-card">
-      <h3>Customer Segmentation for Marketing Strategy</h3>
-      <p><strong>Tools:</strong> R, SQL, Tableau</p>
-      <ul>
-        <li>Segmented real estate customers using k-means clustering.</li>
-        <li>Created targeted marketing strategies based on behavioral clusters.</li>
-        <li>Visualized segments in Tableau for campaign optimization.</li>
-      </ul>
+      <div class="project-item">
+        <h3>Customer Segmentation Strategy</h3>
+        <p><strong>Tools:</strong> R, SQL, Tableau</p>
+        <ul>
+          <li>Clustered customer profiles using k-means based on transaction and behavioral data.</li>
+          <li>Designed and visualized marketing strategies using Tableau dashboards.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -157,7 +161,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Sai Hemanth Varma Kalidindi</p>
+    <p>&copy; 2025 Sai Hemanth Varma Kalidindi. All rights reserved.</p>
   </footer>
 </body>
 </html>
