@@ -784,17 +784,15 @@
 
     <!-- Projects Section -->
    <section id="projects" class="container my-5">
-  <h2 class="section-heading text-center mb-4">Projects</h2>
-  <div class="row">
+  <h2 class="section-heading text-center mb-4" style="color: white;">Projects</h2>
 
-    <!-- Project 1 -->
-    <div class="col-md-6 col-12 mb-4">
-      <div class="project-item card h-100 p-3 shadow">
-        <h3 class="card-title">Deadly Streets: A Spatial and Behavioral Analysis of Traffic Fatalities in New York City</h3>
-        <p>Jan 2024 – May 2024</p>
-        <button onclick="toggleDetails('details1')" class="btn btn-outline-light mt-2">View Details</button>
-        <div id="details1" style="display: none;" class="mt-3">
-          <pre style="white-space: pre-wrap; font-family: inherit;">
+  <!-- Project 1 -->
+  <div class="project-item card mb-5 p-4 shadow" style="background-color: #00303f; color: white;">
+    <h3 class="card-title">Deadly Streets: A Spatial and Behavioral Analysis of Traffic Fatalities in New York City</h3>
+    <p>Jan 2024 – May 2024</p>
+    <button onclick="toggleDetails('details1')" class="btn btn-outline-light mt-2">View Details</button>
+    <div id="details1" style="display: none;" class="mt-3">
+      <pre style="white-space: pre-wrap; font-family: inherit; color: white;">
 Objective
 This project explores the critical public safety question:
 Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?
@@ -863,19 +861,17 @@ Seeing statistically significant patterns emerge that aligned with real-world tr
 Turning raw data into actionable insights that can inform urban safety policy.
 
 Building a complete end-to-end workflow from hypothesis to visualization in Google Colab and Python.
-          </pre>
-        </div>
-      </div>
+      </pre>
     </div>
+  </div>
 
-    <!-- Project 2 -->
-    <div class="col-md-6 col-12 mb-4">
-      <div class="project-item card h-100 p-3 shadow">
-        <h3 class="card-title">Speed, Safety, and Circuits – Formula 1 Crash Analysis (1950–2020)</h3>
-        <p>Feb 2024 – Apr 2024</p>
-        <button onclick="toggleDetails('details2')" class="btn btn-outline-light mt-2">View Details</button>
-        <div id="details2" style="display: none;" class="mt-3">
-          <pre style="white-space: pre-wrap; font-family: inherit;">
+  <!-- Project 2 -->
+  <div class="project-item card mb-5 p-4 shadow" style="background-color: #00303f; color: white;">
+    <h3 class="card-title">Speed, Safety, and Circuits – Formula 1 Crash Analysis (1950–2020)</h3>
+    <p>Feb 2024 – Apr 2024</p>
+    <button onclick="toggleDetails('details2')" class="btn btn-outline-light mt-2">View Details</button>
+    <div id="details2" style="display: none;" class="mt-3">
+      <pre style="white-space: pre-wrap; font-family: inherit; color: white;">
 Title and Objective
 How have crash patterns in Formula 1 changed over time, and what role have safety innovations played in reducing fatal incidents?
 This project analyzes 70 years of F1 crash data to evaluate the relationship between vehicle improvements, regulation changes, and race-related fatalities.
@@ -905,18 +901,15 @@ Key Insights & Results
 Reflections
 It was challenging to normalize data across decades due to format inconsistencies. However, visualizing the long-term safety evolution in Formula 1 was incredibly rewarding.
 In future iterations, integrating car telemetry or tire degradation data could enhance the predictive understanding of crash causes.
-          </pre>
-        </div>
-      </div>
+      </pre>
     </div>
-
   </div>
 </section>
 
 <script>
   function toggleDetails(id) {
     const el = document.getElementById(id);
-    el.style.display = el.style.display === "none" ? "block" : "none";
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
   }
 </script>
 
