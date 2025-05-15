@@ -14,7 +14,303 @@
       color: #333;
     }
     header {
+      background: #222;<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Hemanth Varma | Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
       background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #444;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .contact {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .download {
+      text-align: center;
+      margin-top: 20px;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Sai Hemanth Varma Kalidindi</h1>
+    <p>Business Analytics Graduate Student | Data Enthusiast | Business Analyst</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I'm currently pursuing a Master's in Business Analytics at University at Albany and hold a Bachelor's in Computer Science. I specialize in turning data into actionable insights using tools like Python, SQL, Power BI, and Tableau. I have prior experience as a Business Analyst in the real estate industry.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel</li>
+      <li><strong>Techniques:</strong> Forecasting, Optimization, Predictive Analytics, Text Mining</li>
+      <li><strong>Business Areas:</strong> BI, Strategic Marketing, Financial Modeling</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="project-card">
+  <h3>NYC Traffic Fatalities Analysis</h3>
+  <p class="date">Jan 2024 – May 2024</p>
+
+  <ul class="summary">
+    <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
+    <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
+    <li>Created Tableau heatmaps and an interactive map showing NYC fatality clusters.</li>
+  </ul>
+
+  <button class="view-details" onclick="toggleDetails(this)">View Details</button>
+
+  <div class="details-section">
+    <h4>📌 Title & Objective</h4>
+    <p>
+      This project explores the critical public safety question:  
+      <em>Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?</em><br><br>
+      Using over two million crash records from the NYC Vision Zero program, the project investigates how time of day, alcohol involvement, borough location, and road user types influence fatal crash outcomes. The goal is to uncover hidden patterns that can inform more equitable, data-driven traffic safety policies targeting the city’s most vulnerable populations and high-risk areas.
+    </p>
+
+    <h4>📂 Data Source</h4>
+    <p>
+      Primary dataset: <strong>NYC Open Data – Vision Zero: Motor Vehicle Collisions (Crashes)</strong><br>
+      Records: 2,000,000+ (2012–2025)<br>
+      Format: CSV<br>
+      Fields: crash date/time, borough, number of persons killed/injured, alcohol involvement, vehicle type, road user type
+    </p>
+
+    <h4>🧪 Methods & Code Snippets</h4>
+    <ul>
+      <li><strong>Independent Sample T-Test:</strong> Compared fatality rates during 12 AM–6 AM vs. daytime. <em>Result:</em> Fatal crashes significantly more likely at night (p &lt; 0.00001).</li>
+      <li><strong>OLS Regression:</strong> Modeled fatality count with predictors like alcohol, borough, time, and interactions (e.g., NIGHT × ALCOHOL).</li>
+      <li><strong>Chi-Square Test:</strong> Assessed association between risky behaviors (e.g., failure to yield, alcohol use) and fatal crashes.</li>
+      <li>Code and data in Python (pandas, statsmodels, seaborn) via Google Colab.</li>
+    </ul>
+
+    <h4>📊 Key Insights</h4>
+    <ul>
+      <li><strong>Time of Day Matters:</strong> Fatal crashes are significantly more likely to occur between 12 AM and 6 AM, driven by low visibility, driver fatigue, and increased impaired driving (T-test p-value &lt; 0.00001).</li>
+      <li><strong>Alcohol Use is Deadly:</strong> Crashes involving alcohol are strongly associated with higher fatality rates. This was validated using both OLS regression and Chi-Square tests.</li>
+      <li><strong>Spatial Disparities:</strong>
+        <ul>
+          <li>Brooklyn and Queens report the highest number of fatalities overall.</li>
+          <li>Midtown Manhattan and Downtown Brooklyn are high-risk zones for fatal crashes, as shown in heatmaps and cluster maps.</li>
+        </ul>
+      </li>
+      <li><strong>Vulnerable Road Users:</strong> Pedestrians make up over 50% of all traffic fatalities, highlighting the urgent need for improved crosswalks, signage, and public awareness.</li>
+      <li><strong>Seasonal Trends:</strong> Fatalities peak during summer months, especially August, and drop during colder months. This suggests a need for seasonal enforcement strategies.</li>
+    </ul>
+
+    <h4>🗺️ Interactive Crash Map</h4>
+    <iframe src="nyc_map.html" width="100%" height="600" style="border:none; border-radius: 12px;"></iframe>
+    <p style="color:#ccc; font-size: 0.95rem; margin-top: 8px;">
+      This interactive map shows fatal crash locations across NYC from 2012 to 2025. Each colored circle represents a crash cluster, categorized by borough. Click a marker to see borough-specific fatalities.
+    </p>
+
+    <h4>💭 Reflections</h4>
+
+    <h5>💡 What Was Challenging:</h5>
+    <ul>
+      <li><strong>Data Cleaning:</strong> Handling over 2 million records required filtering for accuracy and relevance, especially around missing borough names and inconsistent timestamps.</li>
+      <li><strong>Feature Engineering:</strong> Creating binary indicators (e.g., IS_NIGHT, ALCOHOL_INVOLVED) and interaction terms added complexity to the regression modeling.</li>
+      <li><strong>Geospatial Analysis:</strong> Creating cluster maps that meaningfully represented fatality hotspots took several iterations and experimentation with mapping libraries.</li>
+    </ul>
+
+    <h5>🏁 What Was Rewarding:</h5>
+    <ul>
+      <li>Seeing statistically significant patterns emerge that aligned with real-world traffic risks.</li>
+      <li>Turning raw data into actionable insights that can inform urban safety policy.</li>
+      <li>Building a complete end-to-end workflow from hypothesis to visualization in Google Colab and Python.</li>
+    </ul>
+  </div>
+</div>
+<h3>Project 1: Air Turbulence and Flight Safety</h3>
+<p class="date">Jan 2025 – May 2025</p>
+
+<ul class="summary">
+  <li>Analyzed aviation incident data from NOAA and NTSB databases.</li>
+  <li>Mapped turbulence hotspots and developed a basic risk classification model.</li>
+  <li>Identified high-risk flight corridors using atmospheric and route patterns.</li>
+</ul>
+
+<button class="view-details" onclick="toggleDetails(this)">View Details</button>
+
+<div class="details-section">
+  <h4>📌 Title & Objective</h4>
+  <p>
+    Turbulence in the skies remains one of the leading causes of in-flight injuries and flight disruptions. This project explores: 
+    <em>How does air turbulence vary by flight route, time, and atmospheric conditions, and what patterns can help improve aviation safety?</em><br><br>
+    The objective is to analyze publicly available aviation incident data to identify trends in turbulence-related incidents, 
+    pinpoint high-risk airspaces, and propose predictive measures that can enhance airline safety responses.
+  </p>
+
+  <h4>📂 Data Sources</h4>
+  <p>
+    • Source: NOAA’s Aviation Weather Center and NTSB Aviation Accident Database<br>
+    • Format: CSV, historical incident logs<br>
+    • Fields Used: Flight date, location, aircraft type, turbulence severity, injuries reported, atmospheric data<br>
+    • Tools: Python, Pandas, Matplotlib, Seaborn<br>
+    • GitHub: <a href="[Your GitHub Link Here]" target="_blank">[Your GitHub Link Here]</a>
+  </p>
+
+  <h4>🧪 Methods & Code Snippets</h4>
+  <ul>
+    <li>Cleaned and merged turbulence incident logs with weather data.</li>
+    <li>Used time-based analysis to examine turbulence frequency by hour and month.</li>
+    <li>Mapped hotspots using latitude/longitude fields and basemap plotting.</li>
+    <li>Developed a simple classification model to predict turbulence risk by route and weather severity.</li>
+  </ul>
+
+  <pre><code>
+df['month'] = pd.to_datetime(df['incident_date']).dt.month
+df['is_severe'] = df['turbulence_level'].apply(lambda x: 1 if x == 'Severe' else 0)
+sns.countplot(x='month', hue='is_severe', data=df)
+  </code></pre>
+
+  <h4>📊 Key Insights & Results</h4>
+  <ul>
+    <li><strong>Turbulence is more frequent</strong> during afternoon and evening flights.</li>
+    <li><strong>Peak incidents</strong> occur during spring and early summer, aligning with jet stream activity.</li>
+    <li><strong>Routes over mountainous regions</strong> (e.g., Rockies, Andes) had the highest severe turbulence reports.</li>
+    <li><strong>Heatmaps</strong> identified turbulence clusters near common flight corridors, providing insight for re-routing policies.</li>
+  </ul>
+
+  <h4>💭 Reflections</h4>
+
+  <h5>💡 What Was Challenging:</h5>
+  <ul>
+    <li>Merging geospatial weather data with incident records.</li>
+    <li>Ensuring accurate time zone alignment across various flight logs.</li>
+  </ul>
+
+  <h5>🏁 What Was Rewarding:</h5>
+  <ul>
+    <li>Creating visual maps that could have real-world safety implications.</li>
+    <li>Discovering turbulence patterns that align with known atmospheric behavior.</li>
+    <li>Building a simple but informative classification model to predict turbulence risk.</li>
+  </ul>
+</div>
+<h3>Project 3: Speed, Safety, and Circuits – Formula 1 Crash Analysis (1950–2020)</h3>
+<p class="date">Jan 2025 – May 2025</p>
+
+<ul class="summary">
+  <li>Analyzed 70 years of Formula 1 crash data using time-series and regression analysis.</li>
+  <li>Assessed impact of safety regulations like the HALO system on fatal crash rates.</li>
+  <li>Identified high-risk circuits and historical trends in driver incidents.</li>
+</ul>
+
+<button class="view-details" onclick="toggleDetails(this)">View Details</button>
+
+<div class="details-section">
+  <h4>📌 Title & Objective</h4>
+  <p>
+    <em>How have crash patterns in Formula 1 changed over time, and what role have safety innovations played in reducing fatal incidents?</em><br><br>
+    This project analyzes 70 years of F1 crash data to evaluate the relationship between vehicle improvements, regulation changes, and race-related fatalities.
+  </p>
+
+  <h4>📂 Data Sources</h4>
+  <p>
+    • Source: Ergast API, FIA historic archives, and Kaggle (F1 Crashes Dataset)<br>
+    • Format: CSV and JSON<br>
+    • Key Fields: Year, Driver, Crash Type, Fatality, Circuit, Safety Innovations<br>
+    • GitHub: <a href="[Your GitHub Link Here]" target="_blank">[Your GitHub Link Here]</a>
+  </p>
+
+  <h4>🧪 Methods & Code Snippets</h4>
+  <ul>
+    <li>Cleaned datasets for driver retirements due to crashes.</li>
+    <li>Created time-series plots to show crash trends by decade.</li>
+    <li>Performed categorical analysis by track, weather, and vehicle manufacturer.</li>
+    <li>Used regression models to evaluate correlation between regulation years (e.g., HALO in 2018) and fatal crash reduction.</li>
+  </ul>
+
+  <pre><code>
+f1_data['crash_flag'] = f1_data['status'].str.contains('accident').astype(int)
+crash_trend = f1_data.groupby('year')['crash_flag'].mean()
+plt.plot(crash_trend)
+  </code></pre>
+
+  <h4>📊 Key Insights & Results</h4>
+  <ul>
+    <li><strong>Fatal crash rates</strong> have significantly decreased since the 1990s due to modern track design and driver safety gear.</li>
+    <li><strong>The HALO system</strong> introduced in 2018 is correlated with a sharp drop in severe head injuries.</li>
+    <li><strong>Historic circuits</strong> like Nürburgring and Spa-Francorchamps had higher fatality rates due to outdated infrastructure.</li>
+  </ul>
+
+  <h4>💭 Reflections</h4>
+
+  <h5>💡 What Was Challenging:</h5>
+  <ul>
+    <li>Normalizing data across decades due to format inconsistencies.</li>
+  </ul>
+
+  <h5>🏁 What Was Rewarding:</h5>
+  <ul>
+    <li>Visualizing the long-term safety evolution in Formula 1.</li>
+    <li>Connecting historical changes in F1 to data-driven outcomes in crash severity.</li>
+  </ul>
+</div>
+
+
+  </section>
+
+  <section>
+    <h2>Resume</h2>
+    <div class="download">
+      <p><a href="Sai_Hemanth_Resume_Structured.docx" download>📥 Download My Resume (DOCX)</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: <a href="mailto:skalidindi@albany.edu">skalidindi@albany.edu</a></p>
+      <p>Phone: 518-728-2363</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sai Hemanth Varma Kalidindi</p>
+  </footer>
+</body>
+</html>
+
       color: #fff;
       padding: 20px;
       text-align: center;
