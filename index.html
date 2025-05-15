@@ -1,177 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Projects | Sai Hemanth Varma</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #0b1120;
-      color: #ecf0f1;
-      font-family: 'Poppins', sans-serif;
-      padding: 40px;
-    }
+<div class="project-card">
+  <h3>NYC Traffic Fatalities Analysis</h3>
+  <p class="date">Jan 2024 – May 2024</p>
 
-    h2 {
-      text-align: center;
-      color: #fff;
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
+  <ul class="summary">
+    <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
+    <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
+    <li>Created Tableau heatmaps and an interactive map showing NYC fatality clusters.</li>
+  </ul>
 
-    .project-card {
-      background-color: #0f2a3a;
-      border-radius: 15px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
+  <button class="view-details" onclick="toggleDetails(this)">View Details</button>
 
-    .project-card h3 {
-      color: #fff;
-      font-size: 1.5rem;
-      margin-bottom: 5px;
-    }
+  <div class="details-section">
+    <h4>📌 Title & Objective</h4>
+    <p>
+      This project explores the critical public safety question:  
+      <em>Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?</em><br><br>
+      Using over two million crash records from the NYC Vision Zero program, the project investigates how time of day, alcohol involvement, borough location, and road user types influence fatal crash outcomes. The goal is to uncover hidden patterns that can inform more equitable, data-driven traffic safety policies targeting the city’s most vulnerable populations and high-risk areas.
+    </p>
 
-    .project-card .date {
-      color: #f1c40f;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
+    <h4>📂 Data Source</h4>
+    <p>
+      Primary dataset: <strong>NYC Open Data – Vision Zero: Motor Vehicle Collisions (Crashes)</strong><br>
+      Records: 2,000,000+ (2012–2025)<br>
+      Format: CSV<br>
+      Fields: crash date/time, borough, number of persons killed/injured, alcohol involvement, vehicle type, road user type
+    </p>
 
-    .summary {
-      padding-left: 20px;
-      color: #ccc;
-    }
-
-    .summary li {
-      margin-bottom: 8px;
-    }
-
-    .view-details {
-      background-color: #d4af37;
-      color: #0b1120;
-      border: none;
-      padding: 8px 15px;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    .details-section {
-      display: none;
-      background-color: #101d2d;
-      margin-top: 15px;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .details-section h4 {
-      color: #d4af37;
-      margin-top: 12px;
-      margin-bottom: 6px;
-    }
-
-    .details-section h5 {
-      font-size: 1rem;
-      color: #ffdf6b;
-      margin-top: 14px;
-      margin-bottom: 6px;
-    }
-
-    .details-section p, .details-section ul {
-      color: #ddd;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .details-section ul li {
-      margin-bottom: 6px;
-    }
-  </style>
-</head>
-<body>
-
-  <h2>Projects</h2>
-
-  <div class="project-card">
-    <h3>NYC Traffic Fatalities Analysis</h3>
-    <p class="date">Jan 2024 – May 2024</p>
-
-    <ul class="summary">
-      <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
-      <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
-      <li>Created Tableau heatmaps highlighting Brooklyn and Midtown NYC hotspots.</li>
+    <h4>🧪 Methods & Code Snippets</h4>
+    <ul>
+      <li><strong>Independent Sample T-Test:</strong> Compared fatality rates during 12 AM–6 AM vs. daytime. <em>Result:</em> Fatal crashes significantly more likely at night (p &lt; 0.00001).</li>
+      <li><strong>OLS Regression:</strong> Modeled fatality count with predictors like alcohol, borough, time, and interactions (e.g., NIGHT × ALCOHOL).</li>
+      <li><strong>Chi-Square Test:</strong> Assessed association between risky behaviors (e.g., failure to yield, alcohol use) and fatal crashes.</li>
+      <li>Code and data in Python (pandas, statsmodels, seaborn) via Google Colab.</li>
     </ul>
 
-    <button class="view-details" onclick="toggleDetails(this)">View Details</button>
+    <h4>📊 Key Insights</h4>
+    <ul>
+      <li><strong>Time of Day Matters:</strong> Fatal crashes are significantly more likely to occur between 12 AM and 6 AM, driven by low visibility, driver fatigue, and increased impaired driving (T-test p-value &lt; 0.00001).</li>
+      <li><strong>Alcohol Use is Deadly:</strong> Crashes involving alcohol are strongly associated with higher fatality rates. This was validated using both OLS regression and Chi-Square tests.</li>
+      <li><strong>Spatial Disparities:</strong>
+        <ul>
+          <li>Brooklyn and Queens report the highest number of fatalities overall.</li>
+          <li>Midtown Manhattan and Downtown Brooklyn are high-risk zones for fatal crashes, as shown in heatmaps and cluster maps.</li>
+        </ul>
+      </li>
+      <li><strong>Vulnerable Road Users:</strong> Pedestrians make up over 50% of all traffic fatalities, highlighting the urgent need for improved crosswalks, signage, and public awareness.</li>
+      <li><strong>Seasonal Trends:</strong> Fatalities peak during summer months, especially August, and drop during colder months. This suggests a need for seasonal enforcement strategies.</li>
+    </ul>
 
-    <div class="details-section">
-      <h4>📌 Title & Objective</h4>
-      <p>
-        This project explores the critical public safety question:  
-        <em>Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?</em><br><br>
-        Using over two million crash records from the NYC Vision Zero program, the project investigates how time of day, alcohol involvement, borough location, and road user types influence fatal crash outcomes. The goal is to uncover hidden patterns that can inform more equitable, data-driven traffic safety policies targeting the city’s most vulnerable populations and high-risk areas.
-      </p>
+    <h4>🗺️ Interactive Crash Map</h4>
+    <iframe src="borough_fatalities_map (1).html" width="100%" height="600" style="border:none; border-radius: 12px;"></iframe>
+    <p style="color:#ccc; font-size: 0.95rem; margin-top: 8px;">
+      This interactive map shows fatal crash locations across NYC from 2012 to 2025. Each colored circle represents a crash cluster, categorized by borough. Click a marker to see borough-specific fatalities.
+    </p>
 
-      <h4>📂 Data Source</h4>
-      <p>
-        Primary dataset: <strong>NYC Open Data – Vision Zero: Motor Vehicle Collisions (Crashes)</strong><br>
-        Records: 2,000,000+ (2012–2025)<br>
-        Format: CSV<br>
-        Fields: crash date/time, borough, number of persons killed/injured, alcohol involvement, vehicle type, road user type
-      </p>
+    <h4>💭 Reflections</h4>
 
-      <h4>🧪 Methods & Code Snippets</h4>
-      <ul>
-        <li><strong>Independent Sample T-Test:</strong> Compared fatality rates during 12 AM–6 AM vs. daytime. <em>Result:</em> Fatal crashes significantly more likely at night (p &lt; 0.00001).</li>
-        <li><strong>OLS Regression:</strong> Modeled fatality count with predictors like alcohol, borough, time, and interactions (e.g., NIGHT × ALCOHOL).</li>
-        <li><strong>Chi-Square Test:</strong> Assessed association between risky behaviors (e.g., failure to yield, alcohol use) and fatal crashes.</li>
-        <li>Code and data in Python (pandas, statsmodels, seaborn) via Google Colab.</li>
-      </ul>
+    <h5>💡 What Was Challenging:</h5>
+    <ul>
+      <li><strong>Data Cleaning:</strong> Handling over 2 million records required filtering for accuracy and relevance, especially around missing borough names and inconsistent timestamps.</li>
+      <li><strong>Feature Engineering:</strong> Creating binary indicators (e.g., IS_NIGHT, ALCOHOL_INVOLVED) and interaction terms added complexity to the regression modeling.</li>
+      <li><strong>Geospatial Analysis:</strong> Creating cluster maps that meaningfully represented fatality hotspots took several iterations and experimentation with mapping libraries.</li>
+    </ul>
 
-      <h4>📊 Key Insights</h4>
-      <ul>
-        <li><strong>Time of Day Matters:</strong> Fatal crashes are significantly more likely to occur between 12 AM and 6 AM, driven by low visibility, driver fatigue, and increased impaired driving (T-test p-value &lt; 0.00001).</li>
-        <li><strong>Alcohol Use is Deadly:</strong> Crashes involving alcohol are strongly associated with higher fatality rates. This was validated using both OLS regression and Chi-Square tests.</li>
-        <li><strong>Spatial Disparities:</strong>
-          <ul>
-            <li>Brooklyn and Queens report the highest number of fatalities overall.</li>
-            <li>Midtown Manhattan and Downtown Brooklyn are high-risk zones for fatal crashes, as shown in heatmaps and cluster maps.</li>
-          </ul>
-        </li>
-        <li><strong>Vulnerable Road Users:</strong> Pedestrians make up over 50% of all traffic fatalities, highlighting the urgent need for improved crosswalks, signage, and public awareness.</li>
-        <li><strong>Seasonal Trends:</strong> Fatalities peak during summer months, especially August, and drop during colder months. This suggests a need for seasonal enforcement strategies.</li>
-      </ul>
-
-      <h4>💭 Reflections</h4>
-
-      <h5>💡 What Was Challenging:</h5>
-      <ul>
-        <li><strong>Data Cleaning:</strong> Handling over 2 million records required filtering for accuracy and relevance, especially around missing borough names and inconsistent timestamps.</li>
-        <li><strong>Feature Engineering:</strong> Creating binary indicators (e.g., IS_NIGHT, ALCOHOL_INVOLVED) and interaction terms added complexity to the regression modeling.</li>
-        <li><strong>Geospatial Analysis:</strong> Creating cluster maps that meaningfully represented fatality hotspots took several iterations and experimentation with mapping libraries.</li>
-      </ul>
-
-      <h5>🏁 What Was Rewarding:</h5>
-      <ul>
-        <li>Seeing statistically significant patterns emerge that aligned with real-world traffic risks.</li>
-        <li>Turning raw data into actionable insights that can inform urban safety policy.</li>
-        <li>Building a complete end-to-end workflow from hypothesis to visualization in Google Colab and Python.</li>
-      </ul>
-    </div>
+    <h5>🏁 What Was Rewarding:</h5>
+    <ul>
+      <li>Seeing statistically significant patterns emerge that aligned with real-world traffic risks.</li>
+      <li>Turning raw data into actionable insights that can inform urban safety policy.</li>
+      <li>Building a complete end-to-end workflow from hypothesis to visualization in Google Colab and Python.</li>
+    </ul>
   </div>
-
-  <script>
-    function toggleDetails(button) {
-      const section = button.nextElementSibling;
-      const isVisible = section.style.display === 'block';
-      section.style.display = isVisible ? 'none' : 'block';
-      button.textContent = isVisible ? 'View Details' : 'Hide Details';
-      if (!isVisible) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  </script>
-
-</body>
-</html>
+</div>
