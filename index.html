@@ -1,495 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sai Hemanth Varma | Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #222;<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sai Hemanth Varma | Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
-    }
-    h1, h2 {
-      color: #444;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .contact {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .download {
-      text-align: center;
-      margin-top: 20px;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Hemanth Varma | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #ecf0f1;
+            --accent-color: #d4af37;
+            --text-color: #ecf0f1;
+            --bg-color: #002b36;
+            --card-bg: #004953;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: transparent !important;
+            transition: background-color 0.3s ease;
+            border: none;
+            width: 100%;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand, .nav-link {
+            color: lightgray !important;
+            font-size: 1em;
+            transition: font-size 0.3s ease;
+        }
+
+        .nav-link {
+            font-weight: bold;
+        }
+
+        .navbar-toggler {
+            border: 0px !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, teal, black, #002b36);
+        }
+
+        .intro-heading {
+            font-size: 3rem;
+            margin-bottom: 0;
+            margin-top: 25px;
+            color: #ecf0f1;
+            font-weight: bolder;
+            text-align: left;
+            font-family: "Teko", sans-serif;
+        }
+
+        .highlighted-text {
+            font-size: 3.8rem;
+            color: #d4af37;
+        }
+
+        .intro-subheading {
+            font-size: 1rem;
+            color: #ecf0f1;
+            font-weight: bold;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        .welcome-message {
+            margin-top: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #b0bec5;
+            font-style: italic;
+        }
+
+        .wave-emoji {
+            display: inline-block;
+            animation: wave 2s infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #0b1120;
+            color: #ffffff;
+            padding: 60px 20px;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .about-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-picture-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-picture img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            border: none;
+            object-fit: cover;
+            object-position: top;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6), 0 8px 16px #004953;
+            border: 3px solid #004953;
+        }
+
+        .buttons-under-image {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            transform: translateY(20px);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .resume-btn {
+            background-color: black;
+        }
+
+        .linkedin-btn {
+            background-color: #0e76a8;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .about-description ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .about-description li {
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 15px;
+            text-align: left;
+            color: lightgray;
+        }
+
+        /* Experience Section */
+        .experience-container {
+            display: flex;
+        }
+
+        .experience-header {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            margin-top: 0;
+            padding: 5px 20px;
+            border-radius: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .experience-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .company-info, .years {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .experience-header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: #004953;
+        }
+
+        .experience-header.active {
+            background: #004953;
+        }
+
+        .experience-content {
+            display: none;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            padding: 10px;
+            font-size: 1rem;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .experience-content ul {
+            line-height: 1.6;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-left: 0;
+        }
+
+        .experience-content ul li {
+            margin-bottom: 5px;
+            list-style-position: outside;
+        }
+
+        .experience-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+
+        .skill-category {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: left;
+            background-color: var(--card-bg);
+        }
+
+        .skill-category h3 {
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .skill-category ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            text-align: left;
+        }
+
+        .skill-category ul li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category ul li i {
+            margin-right: 0.5rem;
+            color: #d4af37;
+            font-size: 1.2rem;
+        }
+
+        /* Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .project-item p {
+            color: #D4AF37;
+            margin-top: 5px;
+        }
+
+        .project-item ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .project-item ul li {
+            margin-bottom: 1rem;
+        }
+
+        /* Education Section */
+        .education-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .education-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .education-item p {
+            color: #D4AF37;
+        }
+
+        /* Certifications Section */
+        .certification-slider {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .certification-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .certification-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .badge-image {
+            width: 120px;
+            height: auto;
+            margin: 15px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .certification-card h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .certification-card p {
+            color: #D4AF37;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--card-bg);
+            color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Section Headings */
+        .section-heading {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .intro-heading {
+                font-size: 2.2rem;
+            }
+
+            .highlighted-text {
+                font-size: 2.5rem;
+            }
+
+            .intro-subheading {
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .profile-picture img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .experience-container {
+                flex-direction: column;
+            }
+
+            .experience-titles {
+                width: 100%;
+                padding: 0;
+            }
+
+            .navbar-collapse {
+                background-color: black !important;
+                opacity: 0.8;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .intro-heading {
+                font-size: 3.5rem;
+            }
+
+            .highlighted-text {
+                font-size: 3.5rem;
+            }
+
+            .intro-subheading {
+                font-size: 1.5rem;
+            }
+
+            .about-heading {
+                font-size: 2.5rem;
+            }
+
+            .about-description li {
+                font-size: 1.2rem;
+                text-align: justify;
+            }
+
+            .skill-category h3 {
+                font-size: 1.3rem;
+            }
+
+            .skill-category ul li {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Sai Hemanth Varma Kalidindi</h1>
-    <p>Business Analytics Graduate Student | Data Enthusiast | Business Analyst</p>
-  </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Sai Hemanth Varma</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <section>
-    <h2>About Me</h2>
-    <p>I'm currently pursuing a Master's in Business Analytics at University at Albany and hold a Bachelor's in Computer Science. I specialize in turning data into actionable insights using tools like Python, SQL, Power BI, and Tableau. I have prior experience as a Business Analyst in the real estate industry.</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+        <div class="hero-content container" style="text-align: left;">
+            <h1 class="intro-heading">
+                Hi, I'm <span class="highlighted-text">Sai Hemanth</span> 
+                <span class="wave-emoji">👋</span>
+            </h1>
+            <h2 class="intro-subheading">
+                I'm a <span id="animated-text"></span>
+            </h2>
+            <h2 class="welcome-message">Welcome to my portfolio! I'm passionate about turning data into actionable insights and building solutions that make an impact.</h2>
+            <h3 class="about-heading">Let's dive in. 👨‍💻</h3>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel</li>
-      <li><strong>Techniques:</strong> Forecasting, Optimization, Predictive Analytics, Text Mining</li>
-      <li><strong>Business Areas:</strong> BI, Strategic Marketing, Financial Modeling</li>
-    </ul>
-  </section>
+            <div class="about-container">
+                <div class="about-content row">
+                    <div class="col-md-3 col-12 profile-picture-container">
+                        <div class="profile-picture">
+                            <img src="https://via.placeholder.com/250" alt="Profile Picture">
+                        </div>
+                        <div class="buttons-under-image">
+                            <a href="#" class="btn resume-btn">Resume</a>
+                            <a href="#" class="btn linkedin-btn">LinkedIn</a>
+                        </div>
+                    </div>
 
-  <section>
-    <div class="project-card">
-  <h3>NYC Traffic Fatalities Analysis</h3>
-  <p class="date">Jan 2024 – May 2024</p>
+                    <div class="col-md-8 col-12 about-description">
+                        <ul>
+                            <li>📊 I'm a Business Analytics graduate with expertise in data analysis and visualization.</li>
+                            <li>🔍 Specializing in Python, SQL, Power BI, and Tableau to uncover insights from complex datasets.</li>
+                            <li>💡 Passionate about predictive analytics, optimization, and data-driven decision making.</li>
+                            <li>🚀 Experienced in real estate analytics and building business intelligence solutions.</li>
+                            <li>🌱 Continuously learning and exploring new technologies in the data space.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <ul class="summary">
-    <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
-    <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
-    <li>Created Tableau heatmaps and an interactive map showing NYC fatality clusters.</li>
-  </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="container my-4">
+        <h2 class="section-heading text-center mb-4">Work Experience</h2>
+        <div class="row">
+            <div class="col-md-4 col-12 experience-titles">
+                <div class="experience-header active" data-target="experience-1">
+                    <h3>Business Analyst</h3>
+                    <p class="company-info">Real Estate Analytics Firm</p>
+                    <p class="years">Jan 2022 - May 2023</p>
+                </div>
 
-  <button class="view-details" onclick="toggleDetails(this)">View Details</button>
+                <div class="experience-content card active d-md-none" id="experience-1-mob">
+                    <h4 class="role-subheading">Real Estate Analytics Firm</h4>
+                    <h4 class="role-subheadings">Jan 2022 - May 2023 (1 yr 5 mos)</h4>
+                    <ul>
+                        <li>Analyzed market trends and property valuations using Python and SQL.</li>
+                        <li>Developed predictive models for property price forecasting.</li>
+                        <li>Created interactive dashboards in Power BI for executive decision-making.</li>
+                        <li>Automated data collection and reporting processes, saving 15+ hours weekly.</li>
+                    </ul>
+                </div>
 
-  <div class="details-section">
-    <h4>📌 Title & Objective</h4>
-    <p>
-      This project explores the critical public safety question:  
-      <em>Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?</em><br><br>
-      Using over two million crash records from the NYC Vision Zero program, the project investigates how time of day, alcohol involvement, borough location, and road user types influence fatal crash outcomes. The goal is to uncover hidden patterns that can inform more equitable, data-driven traffic safety policies targeting the city’s most vulnerable populations and high-risk areas.
-    </p>
+                <div class="experience-header" data-target="experience-2">
+                    <h3>Data Analyst Intern</h3>
+                    <p class="company-info">Financial Services Company</p>
+                    <p class="years">Jun 2021 - Dec 2021</p>
+                </div>
 
-    <h4>📂 Data Source</h4>
-    <p>
-      Primary dataset: <strong>NYC Open Data – Vision Zero: Motor Vehicle Collisions (Crashes)</strong><br>
-      Records: 2,000,000+ (2012–2025)<br>
-      Format: CSV<br>
-      Fields: crash date/time, borough, number of persons killed/injured, alcohol involvement, vehicle type, road user type
-    </p>
+                <div class="experience-content card d-md-none" id="experience-2-mob">
+                    <h4 class="role-subheading">Financial Services Company</h4>
+                    <h4 class="role-subheadings">Jun 2021 - Dec 2021 (7 mos)</h4>
+                    <ul>
+                        <li>Performed customer segmentation analysis using clustering techniques.</li>
+                        <li>Built financial risk assessment models with 92% accuracy.</li>
+                        <li>Designed Tableau dashboards to track KPIs and business metrics.</li>
+                        <li>Optimized SQL queries reducing report generation time by 40%.</li>
+                    </ul>
+                </div>
+            </div>
 
-    <h4>🧪 Methods & Code Snippets</h4>
-    <ul>
-      <li><strong>Independent Sample T-Test:</strong> Compared fatality rates during 12 AM–6 AM vs. daytime. <em>Result:</em> Fatal crashes significantly more likely at night (p &lt; 0.00001).</li>
-      <li><strong>OLS Regression:</strong> Modeled fatality count with predictors like alcohol, borough, time, and interactions (e.g., NIGHT × ALCOHOL).</li>
-      <li><strong>Chi-Square Test:</strong> Assessed association between risky behaviors (e.g., failure to yield, alcohol use) and fatal crashes.</li>
-      <li>Code and data in Python (pandas, statsmodels, seaborn) via Google Colab.</li>
-    </ul>
+            <div class="col-md-8 col-12 experience-descriptions d-md-block d-none">
+                <div class="experience-content card active" id="experience-1">
+                    <h4 class="role-subheading">Real Estate Analytics Firm</h4>
+                    <h4 class="role-subheadings">Jan 2022 - May 2023 (1 yr 5 mos)</h4>
+                    <ul>
+                        <li>Analyzed market trends and property valuations using Python and SQL.</li>
+                        <li>Developed predictive models for property price forecasting.</li>
+                        <li>Created interactive dashboards in Power BI for executive decision-making.</li>
+                        <li>Automated data collection and reporting processes, saving 15+ hours weekly.</li>
+                    </ul>
+                </div>
 
-    <h4>📊 Key Insights</h4>
-    <ul>
-      <li><strong>Time of Day Matters:</strong> Fatal crashes are significantly more likely to occur between 12 AM and 6 AM, driven by low visibility, driver fatigue, and increased impaired driving (T-test p-value &lt; 0.00001).</li>
-      <li><strong>Alcohol Use is Deadly:</strong> Crashes involving alcohol are strongly associated with higher fatality rates. This was validated using both OLS regression and Chi-Square tests.</li>
-      <li><strong>Spatial Disparities:</strong>
-        <ul>
-          <li>Brooklyn and Queens report the highest number of fatalities overall.</li>
-          <li>Midtown Manhattan and Downtown Brooklyn are high-risk zones for fatal crashes, as shown in heatmaps and cluster maps.</li>
-        </ul>
-      </li>
-      <li><strong>Vulnerable Road Users:</strong> Pedestrians make up over 50% of all traffic fatalities, highlighting the urgent need for improved crosswalks, signage, and public awareness.</li>
-      <li><strong>Seasonal Trends:</strong> Fatalities peak during summer months, especially August, and drop during colder months. This suggests a need for seasonal enforcement strategies.</li>
-    </ul>
+                <div class="experience-content card" id="experience-2">
+                    <h4 class="role-subheading">Financial Services Company</h4>
+                    <h4 class="role-subheadings">Jun 2021 - Dec 2021 (7 mos)</h4>
+                    <ul>
+                        <li>Performed customer segmentation analysis using clustering techniques.</li>
+                        <li>Built financial risk assessment models with 92% accuracy.</li>
+                        <li>Designed Tableau dashboards to track KPIs and business metrics.</li>
+                        <li>Optimized SQL queries reducing report generation time by 40%.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h4>🗺️ Interactive Crash Map</h4>
-    <iframe src="nyc_map.html" width="100%" height="600" style="border:none; border-radius: 12px;"></iframe>
-    <p style="color:#ccc; font-size: 0.95rem; margin-top: 8px;">
-      This interactive map shows fatal crash locations across NYC from 2012 to 2025. Each colored circle represents a crash cluster, categorized by borough. Click a marker to see borough-specific fatalities.
-    </p>
+    <!-- Skills Section -->
+    <section id="skills" class="container my-5">
+        <h2 class="section-heading">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-line"></i> Data Analysis</h3>
+                <ul>
+                    <li><i class="fab fa-python"></i> Python (Pandas, NumPy)</li>
+                    <li><i class="fas fa-database"></i> SQL</li>
+                    <li><i class="fas fa-calculator"></i> R</li>
+                    <li><i class="fas fa-table"></i> Excel</li>
+                    <li><i class="fas fa-project-diagram"></i> Power BI</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                <ul>
+                    <li><i class="fas fa-robot"></i> Scikit-learn</li>
+                    <li><i class="fas fa-network-wired"></i> TensorFlow</li>
+                    <li><i class="fas fa-chart-bar"></i> Statistical Modeling</li>
+                    <li><i class="fas fa-search"></i> Predictive Analytics</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> Data Engineering</h3>
+                <ul>
+                    <li><i class="fas fa-database"></i> SQL Databases</li>
+                    <li><i class="fas fa-server"></i> ETL Processes</li>
+                    <li><i class="fab fa-aws"></i> AWS (Redshift, S3)</li>
+                    <li><i class="fas fa-stream"></i> Data Pipelines</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-chart-pie"></i> Visualization</h3>
+                <ul>
+                    <li><i class="fas fa-chart-bar"></i> Tableau</li>
+                    <li><i class="fas fa-chart-line"></i> Power BI</li>
+                    <li><i class="fab fa-js"></i> D3.js</li>
+                    <li><i class="fas fa-map"></i> Geospatial Analysis</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cogs"></i> Business Skills</h3>
+                <ul>
+                    <li><i class="fas fa-lightbulb"></i> Business Intelligence</li>
+                    <li><i class="fas fa-bullseye"></i> Strategic Marketing</li>
+                    <li><i class="fas fa-coins"></i> Financial Modeling</li>
+                    <li><i class="fas fa-project-diagram"></i> Process Optimization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <h4>💭 Reflections</h4>
+    <!-- Projects Section -->
+    <section id="projects" class="container my-5">
+        <h2 class="section-heading text-center mb-4">Projects</h2>
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <div class="project-item card h-100 p-3 shadow">
+                    <h3 class="card-title">NYC Traffic Fatalities Analysis</h3>
+                    <p>Jan 2024 - May 2024</p>
+                    <ul class="card-text mt-3">
+                        <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
+                        <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
+                        <li>Created Tableau heatmaps showing NYC fatality clusters.</li>
+                        <li>Identified high-risk periods and locations for traffic accidents.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <div class="project-item card h-100 p-3 shadow">
+                    <h3 class="card-title">Real Estate Price Prediction</h3>
+                    <p>Aug 2023 - Dec 2023</p>
+                    <ul class="card-text mt-3">
+                        <li>Developed a machine learning model to predict property prices with 89% accuracy.</li>
+                        <li>Incorporated geospatial data and neighborhood features.</li>
+                        <li>Built interactive dashboard for real estate agents to explore predictions.</li>
+                        <li>Deployed model as a REST API using Flask.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h5>💡 What Was Challenging:</h5>
-    <ul>
-      <li><strong>Data Cleaning:</strong> Handling over 2 million records required filtering for accuracy and relevance, especially around missing borough names and inconsistent timestamps.</li>
-      <li><strong>Feature Engineering:</strong> Creating binary indicators (e.g., IS_NIGHT, ALCOHOL_INVOLVED) and interaction terms added complexity to the regression modeling.</li>
-      <li><strong>Geospatial Analysis:</strong> Creating cluster maps that meaningfully represented fatality hotspots took several iterations and experimentation with mapping libraries.</li>
-    </ul>
+    <!-- Education Section -->
+    <section id="education" class="container my-5">
+        <h2 class="section-heading text-center mb-4">Education</h2>
+        <div class="row">
+            <div class="col-md-6 col-12 mb-4">
+                <div class="education-item card h-100 p-3 shadow">
+                    <h3 class="card-title">Master's in Business Analytics</h3>
+                    <p>University at Albany</p>
+                    <p>2023 - 2024</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 mb-4">
+                <div class="education-item card h-100 p-3 shadow">
+                    <h3 class="card-title">Bachelor's in Computer Science</h3>
+                    <p>Your University</p>
+                    <p>2018 - 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h5>🏁 What Was Rewarding:</h5>
-    <ul>
-      <li>Seeing statistically significant patterns emerge that aligned with real-world traffic risks.</li>
-      <li>Turning raw data into actionable insights that can inform urban safety policy.</li>
-      <li>Building a complete end-to-end workflow from hypothesis to visualization in Google Colab and Python.</li>
-    </ul>
-  </div>
-</div>
-<h3>Project 1: Air Turbulence and Flight Safety</h3>
-<p class="date">Jan 2025 – May 2025</p>
+    <!-- Certifications Section -->
+    <section id="certifications" class="container my-5">
+        <h2 class="section-heading text-center mb-4">Certifications</h2>
+        <div class="certification-slider">
+            <div class="certification-card">
+                <h3>Tableau Desktop Specialist</h3>
+                <img src="https://via.placeholder.com/120" alt="Tableau Certification Badge" class="badge-image">
+                <p>Tableau</p>
+            </div>
+            <div class="certification-card">
+                <h3>Google Data Analytics</h3>
+                <img src="https://via.placeholder.com/120" alt="Google Certification Badge" class="badge-image">
+                <p>Google</p>
+            </div>
+        </div>
+    </section>
 
-<ul class="summary">
-  <li>Analyzed aviation incident data from NOAA and NTSB databases.</li>
-  <li>Mapped turbulence hotspots and developed a basic risk classification model.</li>
-  <li>Identified high-risk flight corridors using atmospheric and route patterns.</li>
-</ul>
-
-<button class="view-details" onclick="toggleDetails(this)">View Details</button>
-
-<div class="details-section">
-  <h4>📌 Title & Objective</h4>
-  <p>
-    Turbulence in the skies remains one of the leading causes of in-flight injuries and flight disruptions. This project explores: 
-    <em>How does air turbulence vary by flight route, time, and atmospheric conditions, and what patterns can help improve aviation safety?</em><br><br>
-    The objective is to analyze publicly available aviation incident data to identify trends in turbulence-related incidents, 
-    pinpoint high-risk airspaces, and propose predictive measures that can enhance airline safety responses.
-  </p>
-
-  <h4>📂 Data Sources</h4>
-  <p>
-    • Source: NOAA’s Aviation Weather Center and NTSB Aviation Accident Database<br>
-    • Format: CSV, historical incident logs<br>
-    • Fields Used: Flight date, location, aircraft type, turbulence severity, injuries reported, atmospheric data<br>
-    • Tools: Python, Pandas, Matplotlib, Seaborn<br>
-    • GitHub: <a href="[Your GitHub Link Here]" target="_blank">[Your GitHub Link Here]</a>
-  </p>
-
-  <h4>🧪 Methods & Code Snippets</h4>
-  <ul>
-    <li>Cleaned and merged turbulence incident logs with weather data.</li>
-    <li>Used time-based analysis to examine turbulence frequency by hour and month.</li>
-    <li>Mapped hotspots using latitude/longitude fields and basemap plotting.</li>
-    <li>Developed a simple classification model to predict turbulence risk by route and weather severity.</li>
-  </ul>
-
-  <pre><code>
-df['month'] = pd.to_datetime(df['incident_date']).dt.month
-df['is_severe'] = df['turbulence_level'].apply(lambda x: 1 if x == 'Severe' else 0)
-sns.countplot(x='month', hue='is_severe', data=df)
-  </code></pre>
-
-  <h4>📊 Key Insights & Results</h4>
-  <ul>
-    <li><strong>Turbulence is more frequent</strong> during afternoon and evening flights.</li>
-    <li><strong>Peak incidents</strong> occur during spring and early summer, aligning with jet stream activity.</li>
-    <li><strong>Routes over mountainous regions</strong> (e.g., Rockies, Andes) had the highest severe turbulence reports.</li>
-    <li><strong>Heatmaps</strong> identified turbulence clusters near common flight corridors, providing insight for re-routing policies.</li>
-  </ul>
-
-  <h4>💭 Reflections</h4>
-
-  <h5>💡 What Was Challenging:</h5>
-  <ul>
-    <li>Merging geospatial weather data with incident records.</li>
-    <li>Ensuring accurate time zone alignment across various flight logs.</li>
-  </ul>
-
-  <h5>🏁 What Was Rewarding:</h5>
-  <ul>
-    <li>Creating visual maps that could have real-world safety implications.</li>
-    <li>Discovering turbulence patterns that align with known atmospheric behavior.</li>
-    <li>Building a simple but informative classification model to predict turbulence risk.</li>
-  </ul>
-</div>
-<h3>Project 3: Speed, Safety, and Circuits – Formula 1 Crash Analysis (1950–2020)</h3>
-<p class="date">Jan 2025 – May 2025</p>
-
-<ul class="summary">
-  <li>Analyzed 70 years of Formula 1 crash data using time-series and regression analysis.</li>
-  <li>Assessed impact of safety regulations like the HALO system on fatal crash rates.</li>
-  <li>Identified high-risk circuits and historical trends in driver incidents.</li>
-</ul>
-
-<button class="view-details" onclick="toggleDetails(this)">View Details</button>
-
-<div class="details-section">
-  <h4>📌 Title & Objective</h4>
-  <p>
-    <em>How have crash patterns in Formula 1 changed over time, and what role have safety innovations played in reducing fatal incidents?</em><br><br>
-    This project analyzes 70 years of F1 crash data to evaluate the relationship between vehicle improvements, regulation changes, and race-related fatalities.
-  </p>
-
-  <h4>📂 Data Sources</h4>
-  <p>
-    • Source: Ergast API, FIA historic archives, and Kaggle (F1 Crashes Dataset)<br>
-    • Format: CSV and JSON<br>
-    • Key Fields: Year, Driver, Crash Type, Fatality, Circuit, Safety Innovations<br>
-    • GitHub: <a href="[Your GitHub Link Here]" target="_blank">[Your GitHub Link Here]</a>
-  </p>
-
-  <h4>🧪 Methods & Code Snippets</h4>
-  <ul>
-    <li>Cleaned datasets for driver retirements due to crashes.</li>
-    <li>Created time-series plots to show crash trends by decade.</li>
-    <li>Performed categorical analysis by track, weather, and vehicle manufacturer.</li>
-    <li>Used regression models to evaluate correlation between regulation years (e.g., HALO in 2018) and fatal crash reduction.</li>
-  </ul>
-
-  <pre><code>
-f1_data['crash_flag'] = f1_data['status'].str.contains('accident').astype(int)
-crash_trend = f1_data.groupby('year')['crash_flag'].mean()
-plt.plot(crash_trend)
-  </code></pre>
-
-  <h4>📊 Key Insights & Results</h4>
-  <ul>
-    <li><strong>Fatal crash rates</strong> have significantly decreased since the 1990s due to modern track design and driver safety gear.</li>
-    <li><strong>The HALO system</strong> introduced in 2018 is correlated with a sharp drop in severe head injuries.</li>
-    <li><strong>Historic circuits</strong> like Nürburgring and Spa-Francorchamps had higher fatality rates due to outdated infrastructure.</li>
-  </ul>
-
-  <h4>💭 Reflections</h4>
-
-  <h5>💡 What Was Challenging:</h5>
-  <ul>
-    <li>Normalizing data across decades due to format inconsistencies.</li>
-  </ul>
-
-  <h5>🏁 What Was Rewarding:</h5>
-  <ul>
-    <li>Visualizing the long-term safety evolution in Formula 1.</li>
-    <li>Connecting historical changes in F1 to data-driven outcomes in crash severity.</li>
-  </ul>
-</div>
-
-
-  </section>
-
-  <section>
-    <h2>Resume</h2>
-    <div class="download">
-      <p><a href="Sai_Hemanth_Resume_Structured.docx" download>📥 Download My Resume (DOCX)</a></p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact">
-      <p>Email: <a href="mailto:skalidindi@albany.edu">skalidindi@albany.edu</a></p>
-      <p>Phone: 518-728-2363</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Sai Hemanth Varma Kalidindi</p>
-  </footer>
-</body>
-</html>
-
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      margin-top: 20px;
-      border-radius: 8px;
-    }
-    h1, h2 {
-      color: #444;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .contact {
-      text-align: center;
-      margin-top: 10px;
-    }
-    .download {
-      text-align: center;
-      margin-top: 20px;
-    }
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-    .project-card {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-    }
-    .date {
-      color: #666;
-      font-style: italic;
-    }
-    .view-details {
-      background: #444;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .details-section {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      background: #f9f9f9;
-      border-radius: 5px;
-    }
-    pre {
-      background: #f5f5f5;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Sai Hemanth Varma Kalidindi</h1>
-    <p>Business Analytics Graduate Student | Data Enthusiast | Business Analyst</p>
-  </header>
-
-  <section>
-    <h2>About Me</h2>
-    <p>I'm currently pursuing a Master's in Business Analytics at University at Albany and hold a Bachelor's in Computer Science. I specialize in turning data into actionable insights using tools like Python, SQL, Power BI, and Tableau. I have prior experience as a Business Analyst in the real estate industry.</p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Tools:</strong> Python, SQL, R, Power BI, Tableau, Excel</li>
-      <li><strong>Techniques:</strong> Forecasting, Optimization, Predictive Analytics, Text Mining</li>
-      <li><strong>Business Areas:</strong> BI, Strategic Marketing, Financial Modeling</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    
-    <div class="project-card">
-      <h3>NYC Traffic Fatalities Analysis</h3>
-      <p class="date">Jan 2024 – May 2024</p>
-      <ul class="summary">
-        <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
-        <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
-        <li>Created Tableau heatmaps showing NYC fatality clusters.</li>
-      </ul>
-      <button class="view-details" onclick="toggleDetails(this)" aria-expanded="false" aria-controls="details1">
-        View Details
-      </button>
-      <div class="details-section" id="details1">
-        <h4>📌 Title & Objective</h4>
-        <p>
-          This project explores the critical public safety question:  
-          <em>Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?</em><br><br>
-          Using over two million crash records from the NYC Vision Zero program, the project investigates how time of day, alcohol involvement, borough location, and road user types influence fatal crash outcomes.
+    <!-- Contact Section -->
+    <section id="contact" class="container my-5">
+        <h2 class="section-heading text-center mb-4">Contact Me</h2>
+        <p class="contact-intro">
+            Get in touch at <a href="tel:+15187282363"><strong>+1 518-728-2363</strong></a>
         </p>
-        <h4>📊 Key Insights</h4>
-        <ul>
-          <li><strong>Time of Day Matters:</strong> Fatal crashes are significantly more likely to occur between 12 AM and 6 AM</li>
-          <li><strong>Alcohol Use is Deadly:</strong> Crashes involving alcohol are strongly associated with higher fatality rates</li>
-          <li><strong>Spatial Disparities:</strong> Brooklyn and Queens report the highest number of fatalities overall</li>
-        </ul>
-      </div>
-    </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
 
-    <div class="project-card">
-      <h3>Air Turbulence and Flight Safety</h3>
-      <p class="date">Jan 2024 – May 2024</p>
-      <ul class="summary">
-        <li>Analyzed aviation incident data from NOAA and NTSB databases.</li>
-        <li>Mapped turbulence hotspots and developed a basic risk classification model.</li>
-        <li>Identified high-risk flight corridors using atmospheric and route patterns.</li>
-      </ul>
-      <button class="view-details" onclick="toggleDetails(this)" aria-expanded="false" aria-controls="details2">
-        View Details
-      </button>
-      <div class="details-section" id="details2">
-        <h4>📌 Title & Objective</h4>
-        <p>
-          <em>How does air turbulence vary by flight route, time, and atmospheric conditions, and what patterns can help improve aviation safety?</em><br><br>
-          The objective is to analyze publicly available aviation incident data to identify trends in turbulence-related incidents.
-        </p>
-        <h4>📊 Key Insights</h4>
-        <ul>
-          <li><strong>Turbulence is more frequent</strong> during afternoon and evening flights</li>
-          <li><strong>Peak incidents</strong> occur during spring and early summer</li>
-          <li><strong>Routes over mountainous regions</strong> had the highest severe turbulence reports</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sai Hemanth Varma. All rights reserved.</p>
+            <p>
+                <a href="mailto:skalidindi@albany.edu"><i class="fas fa-envelope"></i> skalidindi@albany.edu</a> |
+                <a href="tel:5187282363"><i class="fas fa-phone"></i> 518-728-2363</a>
+            </p>
+            <p>Albany, New York</p>
+        </div>
+    </footer>
 
-  <section>
-    <h2>Resume</h2>
-    <div class="download">
-      <p><a href="Sai_Hemanth_Resume_Structured.docx" download>📥 Download My Resume (DOCX)</a></p>
-    </div>
-  </section>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Typing animation for hero text
+        document.addEventListener('DOMContentLoaded', () => {
+            const words = ["Data Analyst", "Business Analyst", "Data Scientist"];
+            let currentWordIndex = 0;
+            let currentCharIndex = 0;
+            const textElement = document.getElementById("animated-text");
 
-  <section>
-    <h2>Contact</h2>
-    <div class="contact">
-      <p>Email: <a href="mailto:skalidindi@albany.edu">skalidindi@albany.edu</a></p>
-      <p>Phone: 518-728-2363</p>
-    </div>
-  </section>
+            function typeLetter() {
+                const word = words[currentWordIndex];
+                if (currentCharIndex < word.length) {
+                    textElement.textContent += word[currentCharIndex];
+                    currentCharIndex++;
+                    setTimeout(typeLetter, 140);
+                } else {
+                    setTimeout(eraseLetters, 1200);
+                }
+            }
 
-  <footer>
-    <p>&copy; 2024 Sai Hemanth Varma Kalidindi</p>
-  </footer>
+            function eraseLetters() {
+                const word = words[currentWordIndex];
+                if (currentCharIndex > 0) {
+                    textElement.textContent = word.substring(0, currentCharIndex - 1);
+                    currentCharIndex--;
+                    setTimeout(eraseLetters, 100);
+                } else {
+                    currentWordIndex = (currentWordIndex + 1) % words.length;
+                    setTimeout(typeLetter, 500);
+                }
+            }
 
-  <script>
-    function toggleDetails(button) {
-      const detailsSection = button.nextElementSibling;
-      const isExpanded = detailsSection.style.display === 'block';
-      
-      detailsSection.style.display = isExpanded ? 'none' : 'block';
-      button.textContent = isExpanded ? 'View Details' : 'Hide Details';
-      button.setAttribute('aria-expanded', !isExpanded);
-    }
-    
-    // Initialize all details sections as hidden
-    document.addEventListener('DOMContentLoaded', function() {
-      const detailsSections = document.querySelectorAll('.details-section');
-      detailsSections.forEach(section => {
-        section.style.display = 'none';
-      });
-    });
-  </script>
+            typeLetter();
+
+            // Experience section toggle
+            document.querySelectorAll('.experience-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    document.querySelectorAll('.experience-header').forEach(h => h.classList.remove('active'));
+                    document.querySelectorAll('.experience-content').forEach(content => {
+                        content.classList.remove('active');
+                        content.style.opacity = '0';
+                        content.style.transform = 'translateX(-20px)';
+                        content.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    });
+
+                    this.classList.add('active');
+                    const targetId = this.dataset.target;
+                    const mobileContent = document.getElementById(targetId + '-mob');
+                    const desktopContent = document.getElementById(targetId);
+
+                    if (mobileContent) {
+                        mobileContent.classList.add('active');
+                        mobileContent.style.opacity = '1';
+                        mobileContent.style.transform = 'translateX(0)';
+                    }
+                    if (desktopContent) {
+                        desktopContent.classList.add('active');
+                        desktopContent.style.opacity = '1';
+                        desktopContent.style.transform = 'translateX(0)';
+                    }
+                });
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form submission
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        });
+    </script>
 </body>
 </html>
