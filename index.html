@@ -189,7 +189,7 @@
             background-color: black;
         }
 
-        .linkedin-btn {
+        .github-btn {
             background-color: #0e76a8;
         }
 
@@ -283,6 +283,12 @@
             opacity: 1;
             transform: translateX(0);
         }
+        .experience-content.card {
+  background-color: #004953 !important; 
+  color: white !important;
+  border: none;
+  box-shadow: none;
+}
 
         /* Skills Section */
         .skills-grid {
@@ -646,7 +652,7 @@
       </div>
       <div class="buttons-under-image mt-3">
         <a href="Sai_Hemanth_Resume_Structured.pdf" class="btn resume-btn" download>Resume</a>
-        <a href="https://sai-hemanth-kalidindi.github.io/#" class="btn github-btn" target="_blank">GitHub</a>
+        <a href="https://github.com/sai-hemanth-kalidindi" class="btn github-btn" target="_blank">GitHub</a>
       </div>
     </div>
 
@@ -669,14 +675,14 @@
         <h2 class="section-heading text-center mb-4">Work Experience</h2>
         <div class="row">
             <div class="col-md-4 col-12 experience-titles">
-                <div class="experience-header active" data-target="experience-1">
+                <div class="experience-header active" data-target="experience-1" >
                     <h3>Business Analyst</h3>
                     <p class="company-info">Real Estate Analytics Firm</p>
                     <p class="years">Jan 2022 - May 2023</p>
                 </div>
 
-                <div class="experience-content card active d-md-none" id="experience-1-mob" style="background-color:#004953; color:white;">
-                   <h4 class="role-subheading">Real Estate Analytics Firm</h4>
+                <div class="experience-content card active d-md-none" id="experience-1-mob">
+                    <h4 class="role-subheading">Real Estate Analytics Firm</h4>
                     <h4 class="role-subheadings">Jan 2022 - May 2023 (1 yr 5 mos)</h4>
                     <ul>
                         <li>Analyzed market trends and property valuations using Python and SQL.</li>
@@ -703,9 +709,9 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="experience-content card d-md-none" id="experience-2-mob" style="background-color:#004953; color:white;">
-            <div class="experience-content card active" id="experience-1">
+
+            <div class="col-md-8 col-12 experience-descriptions d-md-block d-none">
+                <div class="experience-content card active" id="experience-1">
                     <h4 class="role-subheading">Real Estate Analytics Firm</h4>
                     <h4 class="role-subheadings">Jan 2022 - May 2023 (1 yr 5 mos)</h4>
                     <ul>
@@ -729,7 +735,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Skills Section -->
     <section id="skills" class="container my-5">
         <h2 class="section-heading">Skills</h2>
@@ -922,11 +928,6 @@ Methods & Code Snippets
 • Categorical analysis by track, weather, and vehicle manufacturer.
 • Regression models evaluated correlation between regulation years (like HALO in 2018) and fatal crash reduction.
 
-Example:
-f1_data['crash_flag'] = f1_data['status'].str.contains('accident').astype(int)
-crash_trend = f1_data.groupby('year')['crash_flag'].mean()
-plt.plot(crash_trend)
-
 Key Insights & Results
 • Fatal crash rates have significantly decreased since the 1990s due to modern track design and driver safety gear.
 • The HALO system introduced in 2018 is correlated with a sharp drop in severe head injuries.
@@ -935,6 +936,24 @@ Key Insights & Results
 Reflections
 It was challenging to normalize data across decades due to format inconsistencies. However, visualizing the long-term safety evolution in Formula 1 was incredibly rewarding.
 In future iterations, integrating car telemetry or tire degradation data could enhance the predictive understanding of crash causes.
+<div class="mt-4">
+  <h5 style="color:white; margin-bottom: 20px;">📊 Supporting Visualizations</h5>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    
+    <div style="flex: 1 1 300px; max-width: 48%;">
+      <img src="https://sai-hemanth-kalidindi.github.io/p21.png" 
+           alt="F1 Crash Trends Over Time" 
+           style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <div style="flex: 1 1 300px; max-width: 48%;">
+      <img src="https://sai-hemanth-kalidindi.github.io/p22.png" 
+           alt="Top Crash-Prone F1 Circuits" 
+           style="width: 100%; border-radius: 10px;">
+    </div>
+
+  </div>
+</div>
 
          
       </pre>
@@ -969,11 +988,6 @@ Methods & Code Snippets
 • Mapped hotspots using latitude/longitude fields and basemap plotting.
 • Developed a simple classification model to predict turbulence risk by route and weather severity.
 
-Example:
-df['month'] = pd.to_datetime(df['incident_date']).dt.month
-df['is_severe'] = df['turbulence_level'].apply(lambda x: 1 if x == 'Severe' else 0)
-sns.countplot(x='month', hue='is_severe', data=df)
-
 Key Insights & Results
 • Turbulence is more frequent during afternoon and evening flights.
 • Peak incidents occur during spring and early summer, aligning with jet stream activity.
@@ -984,6 +998,30 @@ Reflections
 This project required overcoming challenges with merging geospatial weather data and ensuring accurate time zone alignment across flights. 
 It was rewarding to create visual maps that could have real-world safety implications. In the future, I would expand the model to include real-time wind shear and altitude patterns for better risk forecasting.
       
+<div class="mt-4">
+  <h5 style="color:white; margin-bottom: 20px;">📊 Supporting Visualizations</h5>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    
+    <div style="flex: 1 1 300px; max-width: 32%;">
+      <img src="https://sai-hemanth-kalidindi.github.io/p31.png" 
+           alt="Incident Reports by Flight Phase" 
+           style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <div style="flex: 1 1 300px; max-width: 32%;">
+      <img src="https://sai-hemanth-kalidindi.github.io/p32.png" 
+           alt="Top Human Factors in Aviation Incidents" 
+           style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <div style="flex: 1 1 300px; max-width: 32%;">
+      <img src="https://sai-hemanth-kalidindi.github.io/p33.png" 
+           alt="Incident Reports Over Time" 
+           style="width: 100%; border-radius: 10px;">
+    </div>
+
+  </div>
+</div>
 
 
       </pre>
