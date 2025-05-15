@@ -783,14 +783,16 @@
     </section>
 
     <!-- Projects Section -->
-   <section id="projects" class="container my-5">
+  <section id="projects" class="container my-5">
   <h2 class="section-heading text-center mb-4" style="color: white;">Projects</h2>
 
   <!-- Project 1 -->
-  <div class="project-item card mb-5 p-4 shadow" style="background-color: #00303f; color: white;">
+  <div class="project-item card mb-5 p-4 shadow" style="background-color: #004953; color: white;">
     <h3 class="card-title">Deadly Streets: A Spatial and Behavioral Analysis of Traffic Fatalities in New York City</h3>
     <p>Jan 2024 – May 2024</p>
-    <button onclick="toggleDetails('details1')" class="btn btn-outline-light mt-2">View Details</button>
+    <p class="mt-3">This project analyzes traffic fatality patterns in NYC to identify behavioral and spatial risk factors.</p>
+<button onclick="toggleDetails('details1')" class="btn btn-outline-light btn-sm mt-2">View Details</button>
+
     <div id="details1" style="display: none;" class="mt-3">
       <pre style="white-space: pre-wrap; font-family: inherit; color: white;">
 Objective
@@ -866,10 +868,12 @@ Building a complete end-to-end workflow from hypothesis to visualization in Goog
   </div>
 
   <!-- Project 2 -->
-  <div class="project-item card mb-5 p-4 shadow" style="background-color: #00303f; color: white;">
+  <div class="project-item card mb-5 p-4 shadow" style="background-color: #004953; color: white;">
     <h3 class="card-title">Speed, Safety, and Circuits – Formula 1 Crash Analysis (1950–2020)</h3>
     <p>Feb 2024 – Apr 2024</p>
-    <button onclick="toggleDetails('details2')" class="btn btn-outline-light mt-2">View Details</button>
+    <p class="mt-3">This project analyzes traffic fatality patterns in NYC to identify behavioral and spatial risk factors.</p>
+<button onclick="toggleDetails('details1')" class="btn btn-outline-light btn-sm mt-2">View Details</button>
+
     <div id="details2" style="display: none;" class="mt-3">
       <pre style="white-space: pre-wrap; font-family: inherit; color: white;">
 Title and Objective
@@ -904,6 +908,53 @@ In future iterations, integrating car telemetry or tire degradation data could e
       </pre>
     </div>
   </div>
+
+  <!-- Project 3 -->
+  <div class="project-item card mb-5 p-4 shadow" style="background-color: #004953; color: white;">
+    <h3 class="card-title">Air Turbulence and Flight Safety</h3>
+    <p>Mar 2024 – May 2024</p>
+    <p class="mt-3">This project analyzes traffic fatality patterns in NYC to identify behavioral and spatial risk factors.</p>
+<button onclick="toggleDetails('details1')" class="btn btn-outline-light btn-sm mt-2">View Details</button>
+
+    <div id="details3" style="display: none;" class="mt-3">
+      <pre style="white-space: pre-wrap; font-family: inherit; color: white;">
+Title and Objective
+Turbulence in the skies remains one of the leading causes of in-flight injuries and flight disruptions. This project explores: 
+How does air turbulence vary by flight route, time, and atmospheric conditions, and what patterns can help improve aviation safety?
+The objective is to analyze publicly available aviation incident data to identify trends in turbulence-related incidents, 
+pinpoint high-risk airspaces, and propose predictive measures that can enhance airline safety responses.
+
+Data Sources
+• Source: NOAA’s Aviation Weather Center and NTSB Aviation Accident Database
+• Format: CSV, historical incident logs
+• Fields Used: Flight date, location, aircraft type, turbulence severity, injuries reported, atmospheric data
+• Tools: Python, Pandas, Matplotlib, Seaborn
+GitHub: [Your GitHub Link Here]
+
+Methods & Code Snippets
+• Cleaned and merged turbulence incident logs with weather data.
+• Used time-based analysis to examine turbulence frequency by hour and month.
+• Mapped hotspots using latitude/longitude fields and basemap plotting.
+• Developed a simple classification model to predict turbulence risk by route and weather severity.
+
+Example:
+df['month'] = pd.to_datetime(df['incident_date']).dt.month
+df['is_severe'] = df['turbulence_level'].apply(lambda x: 1 if x == 'Severe' else 0)
+sns.countplot(x='month', hue='is_severe', data=df)
+
+Key Insights & Results
+• Turbulence is more frequent during afternoon and evening flights.
+• Peak incidents occur during spring and early summer, aligning with jet stream activity.
+• Routes over mountainous regions (e.g., Rockies, Andes) had the highest severe turbulence reports.
+• Heatmaps identified turbulence clusters near common flight corridors, providing insight for re-routing policies.
+
+Reflections
+This project required overcoming challenges with merging geospatial weather data and ensuring accurate time zone alignment across flights. 
+It was rewarding to create visual maps that could have real-world safety implications. In the future, I would expand the model to include real-time wind shear and altitude patterns for better risk forecasting.
+      </pre>
+    </div>
+  </div>
+
 </section>
 
 <script>
@@ -912,28 +963,6 @@ In future iterations, integrating car telemetry or tire degradation data could e
     el.style.display = el.style.display === 'none' ? 'block' : 'none';
   }
 </script>
-
-
-    <!-- Education Section -->
-    <section id="education" class="container my-5">
-        <h2 class="section-heading text-center mb-4">Education</h2>
-        <div class="row">
-            <div class="col-md-6 col-12 mb-4">
-                <div class="education-item card h-100 p-3 shadow">
-                    <h3 class="card-title">Master's in Business Analytics</h3>
-                    <p>University at Albany</p>
-                    <p>2023 - 2024</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-12 mb-4">
-                <div class="education-item card h-100 p-3 shadow">
-                    <h3 class="card-title">Bachelor's in Computer Science</h3>
-                    <p>Your University</p>
-                    <p>2018 - 2022</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="container my-5">
