@@ -59,12 +59,18 @@
       color: #d4af37;
       font-size: 1.4rem;
       margin-bottom: 10px;
+      cursor: pointer;
     }
-    .project-item p { font-size: 0.95rem; color: #aaa; }
-    .project-item ul li {
-      margin-left: 1em;
-      margin-bottom: 10px;
-      list-style: disc;
+    .project-details {
+      display: none;
+      margin-top: 15px;
+      background-color: #16212d;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .project-item p, .project-item ul li {
+      font-size: 0.95rem;
+      color: #ccc;
     }
     a { color: #d4af37; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -113,83 +119,44 @@
   </header>
 
   <section>
-    <h2>About Me</h2>
-    <p style="text-align:center; max-width: 800px; margin: auto;">I'm currently pursuing a Master's in Business Analytics at the University at Albany. With a background in Computer Science and real estate analytics, I specialize in turning raw data into business insights using Python, SQL, Power BI, and Tableau.</p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Languages/Tools:</strong> Python, R, SQL, Tableau, Power BI, Excel</li>
-      <li><strong>Techniques:</strong> Predictive Modeling, Forecasting, Clustering, Regression, Data Wrangling</li>
-      <li><strong>Domains:</strong> Urban Planning, Real Estate Analytics, Customer Behavior, Public Safety</li>
-    </ul>
-  </section>
-
-  <section>
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project-item">
-        <h3><a href="#">NYC Traffic Fatalities Analysis</a></h3>
+        <h3 onclick="toggleProject('project1')">NYC Traffic Fatalities Analysis</h3>
         <p><strong>Tools:</strong> Python, SQL, Tableau</p>
-        <ul>
-          <li>Analyzed Vision Zero crash data to identify high-risk neighborhoods in NYC.</li>
-          <li>Used heatmaps and bar plots to visualize temporal crash patterns.</li>
-          <li>Built OLS regression models to assess behavioral and geographic factors.</li>
-          <li>Created interactive Tableau dashboard for public safety planning.</li>
-        </ul>
+        <div class="project-details" id="project1">
+          <p><strong>Objective:</strong> Investigate spatial, behavioral, and temporal factors influencing traffic fatalities.</p>
+          <ul>
+            <li>Analyzed 2M+ crash records using Vision Zero data.</li>
+            <li>Used OLS, Chi-Square, and T-tests to assess fatality risk by borough, time, and alcohol involvement.</li>
+            <li>Created heatmaps and dashboards revealing Midtown and Brooklyn hotspots.</li>
+            <li>Findings contribute to equity-focused public safety policy design.</li>
+          </ul>
+        </div>
       </div>
+
       <div class="project-item">
-        <h3><a href="#">Formula 1 Crash Trends (1950–2020)</a></h3>
+        <h3 onclick="toggleProject('project2')">Formula 1 Crash Trends (1950–2020)</h3>
         <p><strong>Tools:</strong> Python, Regression</p>
-        <ul>
-          <li>Explored over 70 years of F1 race data to study crash-related retirements.</li>
-          <li>Visualized decade-wise trends in race incidents and track safety.</li>
-          <li>Performed regression analysis to evaluate safety innovation impacts.</li>
-          <li>Identified key teams and circuits associated with high-risk events.</li>
-        </ul>
-      </div>
-      <div class="project-item">
-        <h3><a href="#">311 Complaint Resolution Time Prediction</a></h3>
-        <p><strong>Tools:</strong> Python, Random Forest</p>
-        <ul>
-          <li>Developed predictive models to estimate time-to-resolution for NYC 311 complaints.</li>
-          <li>Engineered features like complaint type, zip code, and submission hour.</li>
-          <li>Improved model performance by grouping complaints into service clusters.</li>
-          <li>Evaluated accuracy using MAE and visualized model performance.</li>
-        </ul>
+        <div class="project-details" id="project2">
+          <p><strong>Objective:</strong> Understand how crash frequency and fatality rates have changed with innovations like HALO and safety barriers.</p>
+          <ul>
+            <li>Parsed F1 crash and retirement data across 70 years.</li>
+            <li>Visualized crash decline after HALO introduction in 2018.</li>
+            <li>Compared tracks like Nürburgring and Spa for historical risks.</li>
+            <li>Explored regulation effects using time-series regression.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2>Education</h2>
-    <div class="education-grid">
-      <div class="education-item">
-        <h3>Master's in Business Analytics, GPA: 3.0</h3>
-        <p>University at Albany, Albany, NY | Expected Graduation: May 2025</p>
-      </div>
-      <div class="education-item">
-        <h3>Bachelor's in Computer Science</h3>
-        <p>GITAM</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Resume</h2>
-    <div class="download">
-      <p><a href="assets/Sai_Hemanth_Resume_Structured.docx" download>📄 Download My Resume</a></p>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact">
-      <p>Email: <a href="mailto:skalidindi@albany.edu">skalidindi@albany.edu</a></p>
-      <p>Phone: 518-728-2363</p>
-    </div>
-  </section>
+  <script>
+    function toggleProject(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 
   <footer>
     <p>&copy; 2025 Sai Hemanth Varma Kalidindi | Designed with ✨ and Data</p>
