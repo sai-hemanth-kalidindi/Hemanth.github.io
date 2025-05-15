@@ -53,13 +53,18 @@
       border-radius: 12px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.25);
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
-    .project-item:hover { transform: translateY(-5px); }
+    .project-item:hover {
+      transform: translateY(-5px);
+    }
     .project-item h3 {
       color: #d4af37;
       font-size: 1.4rem;
       margin-bottom: 10px;
-      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .project-details {
       display: none;
@@ -71,6 +76,18 @@
     .project-item p, .project-item ul li {
       font-size: 0.95rem;
       color: #ccc;
+    }
+    .view-project {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #d4af37;
+      color: #0b1120;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .view-project:hover {
+      background-color: #b8992f;
     }
     a { color: #d4af37; text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -121,40 +138,65 @@
   <section>
     <h2>Projects</h2>
     <div class="project-grid">
-      <div class="project-item">
-        <h3 onclick="toggleProject('project1')">NYC Traffic Fatalities Analysis</h3>
+
+      <div class="project-item" onclick="toggleProject('project1', this)">
+        <h3>NYC Traffic Fatalities Analysis <i class="fas fa-chevron-down"></i></h3>
         <p><strong>Tools:</strong> Python, SQL, Tableau</p>
         <div class="project-details" id="project1">
-          <p><strong>Objective:</strong> Investigate spatial, behavioral, and temporal factors influencing traffic fatalities.</p>
+          <p><strong>Objective:</strong> Investigate spatial, behavioral, and temporal factors influencing traffic fatalities in NYC neighborhoods.</p>
           <ul>
-            <li>Analyzed 2M+ crash records using Vision Zero data.</li>
-            <li>Used OLS, Chi-Square, and T-tests to assess fatality risk by borough, time, and alcohol involvement.</li>
-            <li>Created heatmaps and dashboards revealing Midtown and Brooklyn hotspots.</li>
-            <li>Findings contribute to equity-focused public safety policy design.</li>
+            <li>Analyzed over 2 million crash records from Vision Zero datasets.</li>
+            <li>Applied OLS regression, Chi-Square tests, and T-tests to evaluate borough-level fatality risks.</li>
+            <li>Mapped crash hotspots using heatmaps—Midtown and Brooklyn showed higher fatality clusters.</li>
+            <li>Designed visual dashboards to aid policymakers in safety-focused urban planning.</li>
           </ul>
+          <a href="https://github.com/YOURUSERNAME/nyc-traffic-fatalities" class="view-project" target="_blank">View Full Project</a>
         </div>
       </div>
 
-      <div class="project-item">
-        <h3 onclick="toggleProject('project2')">Formula 1 Crash Trends (1950–2020)</h3>
-        <p><strong>Tools:</strong> Python, Regression</p>
+      <div class="project-item" onclick="toggleProject('project2', this)">
+        <h3>Formula 1 Crash Trends (1950–2020) <i class="fas fa-chevron-down"></i></h3>
+        <p><strong>Tools:</strong> Python, Regression Analysis</p>
         <div class="project-details" id="project2">
-          <p><strong>Objective:</strong> Understand how crash frequency and fatality rates have changed with innovations like HALO and safety barriers.</p>
+          <p><strong>Objective:</strong> Analyze how technological and safety interventions like HALO, run-off zones, and regulation changes affected crash frequency in F1 races.</p>
           <ul>
-            <li>Parsed F1 crash and retirement data across 70 years.</li>
-            <li>Visualized crash decline after HALO introduction in 2018.</li>
-            <li>Compared tracks like Nürburgring and Spa for historical risks.</li>
-            <li>Explored regulation effects using time-series regression.</li>
+            <li>Parsed 70 years of crash, retirement, and qualifying data from F1 archives.</li>
+            <li>Time-series regressions revealed steep drop in fatal crashes post-2010 safety reforms.</li>
+            <li>Highlighted high-risk circuits like Spa and Nürburgring based on historical crash density.</li>
+            <li>Correlated team investment, vehicle power, and safety innovations with retirement types.</li>
           </ul>
+          <a href="https://github.com/YOURUSERNAME/f1-crash-analysis" class="view-project" target="_blank">View Full Project</a>
         </div>
       </div>
+
     </div>
   </section>
 
   <script>
-    function toggleProject(id) {
+    function toggleProject(id, element) {
+      const allDetails = document.querySelectorAll('.project-details');
+      const allIcons = document.querySelectorAll('.project-item i');
+
+      allDetails.forEach(div => {
+        if (div.id !== id) div.style.display = 'none';
+      });
+
+      allIcons.forEach(icon => {
+        icon.className = "fas fa-chevron-down";
+      });
+
       const el = document.getElementById(id);
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      const icon = element.querySelector("i");
+      const isVisible = el.style.display === 'block';
+
+      if (!isVisible) {
+        el.style.display = 'block';
+        icon.className = "fas fa-chevron-up";
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        el.style.display = 'none';
+        icon.className = "fas fa-chevron-down";
+      }
     }
   </script>
 
