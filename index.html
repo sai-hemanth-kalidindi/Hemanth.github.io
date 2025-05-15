@@ -783,35 +783,143 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container my-5">
-        <h2 class="section-heading text-center mb-4">Projects</h2>
-        <div class="row">
-            <div class="col-md-6 col-12 mb-4">
-                <div class="project-item card h-100 p-3 shadow">
-                    <h3 class="card-title">NYC Traffic Fatalities Analysis</h3>
-                    <p>Jan 2024 - May 2024</p>
-                    <ul class="card-text mt-3">
-                        <li>Analyzed over 2M crash records from NYC Vision Zero data.</li>
-                        <li>Used T-Test, OLS Regression, and Chi-Square to identify risk factors.</li>
-                        <li>Created Tableau heatmaps showing NYC fatality clusters.</li>
-                        <li>Identified high-risk periods and locations for traffic accidents.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6 col-12 mb-4">
-                <div class="project-item card h-100 p-3 shadow">
-                    <h3 class="card-title">Real Estate Price Prediction</h3>
-                    <p>Aug 2023 - Dec 2023</p>
-                    <ul class="card-text mt-3">
-                        <li>Developed a machine learning model to predict property prices with 89% accuracy.</li>
-                        <li>Incorporated geospatial data and neighborhood features.</li>
-                        <li>Built interactive dashboard for real estate agents to explore predictions.</li>
-                        <li>Deployed model as a REST API using Flask.</li>
-                    </ul>
-                </div>
-            </div>
+   <section id="projects" class="container my-5">
+  <h2 class="section-heading text-center mb-4">Projects</h2>
+  <div class="row">
+
+    <!-- Project 1 -->
+    <div class="col-md-6 col-12 mb-4">
+      <div class="project-item card h-100 p-3 shadow">
+        <h3 class="card-title">Deadly Streets: A Spatial and Behavioral Analysis of Traffic Fatalities in New York City</h3>
+        <p>Jan 2024 – May 2024</p>
+        <button onclick="toggleDetails('details1')" class="btn btn-outline-light mt-2">View Details</button>
+        <div id="details1" style="display: none;" class="mt-3">
+          <pre style="white-space: pre-wrap; font-family: inherit;">
+Objective
+This project explores the critical public safety question:
+Do neighborhoods with higher traffic-related fatalities share specific temporal, spatial, or behavioral risk factors that contribute to elevated fatality rates in NYC?
+Using over two million crash records from the NYC Vision Zero program, the project investigates how time of day, alcohol involvement, borough location, and road user types influence fatal crash outcomes. The goal is to uncover hidden patterns that can inform more equitable, data-driven traffic safety policies targeting the city’s most vulnerable populations and high-risk areas.
+
+Data Sources
+The primary dataset for this project was sourced from NYC Open Data, specifically the Vision Zero: Motor Vehicle Collisions - Crashes dataset. This dataset includes over two million records of crash incidents reported across New York City's five boroughs.
+
+Source: NYC Open Data – Motor Vehicle Collisions (Crashes)
+
+Data Fields: Crash date/time, location, number of persons killed/injured, contributing factors (e.g., alcohol, speeding), borough, and road user type (pedestrian, cyclist, motorist).
+
+Time Range: Multi-year span (2012–2025)
+
+Data Format: CSV
+Accessed and Processed in: Google Colab
+
+Methods & Code Snippets
+To explore the patterns behind fatal traffic crashes in NYC, I used a multi-method statistical approach. Each method was implemented in Python using libraries like pandas, matplotlib, seaborn, and statsmodels, with the full analysis conducted in Google Colab.
+🔍 Analytical Methods
+1.
+Independent Sample T-Test
+Compared the mean number of fatalities during nighttime (12 AM–6 AM) vs. daytime (6 AM–11:59 PM) crashes to determine if late-night crashes are more deadly.
+Result: Fatal crashes are significantly more likely at night (p < 0.00001).
+
+Ordinary Least Squares (OLS) Regression
+Assessed how variables like alcohol involvement, crash time, and borough interact to influence the number of fatalities.
+Included interaction terms such as NIGHT × ALCOHOL and NIGHT × BOROUGH.
+
+Chi-Square Test of Independence
+Evaluated whether risky driver behaviors (e.g., alcohol use, failure to yield) were statistically associated with fatal crashes.
+
+🔗 View processed dataset and code on GitHub
+
+
+Key Insights & Results
+Through statistical analysis and geospatial visualization, this project revealed critical insights into the factors contributing to traffic fatalities in New York City:
+📊 Key Findings
+
+Time of Day Matters: Fatal crashes are significantly more likely to occur between 12 AM and 6 AM, driven by low visibility, driver fatigue, and increased impaired driving (T-test p-value < 0.00001).
+Alcohol Use is Deadly: Crashes involving alcohol are strongly associated with higher fatality rates. This was validated using both OLS regression and Chi-Square tests.
+
+
+Spatial Disparities:
+Brooklyn and Queens report the highest number of fatalities overall.
+Midtown Manhattan and Downtown Brooklyn are high-risk zones for fatal crashes, as shown in heatmaps and cluster maps.
+
+Vulnerable Road Users: Pedestrians make up over 50% of all traffic fatalities, highlighting the urgent need for improved crosswalks, signage, and public awareness.
+
+Seasonal Trends: Fatalities peak during summer months, especially August, and drop during colder months. This suggests a need for seasonal enforcement strategies.
+
+📈 Visual Aids Used
+
+
+Reflections
+💡 What Was Challenging:
+
+Data Cleaning: Handling over 2 million records required filtering for accuracy and relevance, especially around missing borough names and inconsistent timestamps.
+
+Feature Engineering: Creating binary indicators (e.g., IS_NIGHT, ALCOHOL_INVOLVED) and interaction terms added complexity to the regression modeling.
+Geospatial Analysis: Creating cluster maps that meaningfully represented fatality hotspots took several iterations and experimentation with mapping libraries.
+
+🏁 What Was Rewarding:
+Seeing statistically significant patterns emerge that aligned with real-world traffic risks.
+
+Turning raw data into actionable insights that can inform urban safety policy.
+
+Building a complete end-to-end workflow from hypothesis to visualization in Google Colab and Python.
+          </pre>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="col-md-6 col-12 mb-4">
+      <div class="project-item card h-100 p-3 shadow">
+        <h3 class="card-title">Speed, Safety, and Circuits – Formula 1 Crash Analysis (1950–2020)</h3>
+        <p>Feb 2024 – Apr 2024</p>
+        <button onclick="toggleDetails('details2')" class="btn btn-outline-light mt-2">View Details</button>
+        <div id="details2" style="display: none;" class="mt-3">
+          <pre style="white-space: pre-wrap; font-family: inherit;">
+Title and Objective
+How have crash patterns in Formula 1 changed over time, and what role have safety innovations played in reducing fatal incidents?
+This project analyzes 70 years of F1 crash data to evaluate the relationship between vehicle improvements, regulation changes, and race-related fatalities.
+
+Data Sources
+• Source: Ergast API, FIA historic archives, and Kaggle (F1 Crashes Dataset)
+• Format: CSV and JSON
+• Key Fields: Year, Driver, Crash Type, Fatality, Circuit, Safety Innovations
+GitHub: [Your GitHub Link Here]
+
+Methods & Code Snippets
+• Cleaned datasets for driver retirements due to crashes.
+• Time-series plots showed crash trends by decade.
+• Categorical analysis by track, weather, and vehicle manufacturer.
+• Regression models evaluated correlation between regulation years (like HALO in 2018) and fatal crash reduction.
+
+Example:
+f1_data['crash_flag'] = f1_data['status'].str.contains('accident').astype(int)
+crash_trend = f1_data.groupby('year')['crash_flag'].mean()
+plt.plot(crash_trend)
+
+Key Insights & Results
+• Fatal crash rates have significantly decreased since the 1990s due to modern track design and driver safety gear.
+• The HALO system introduced in 2018 is correlated with a sharp drop in severe head injuries.
+• Historic circuits like Nürburgring and Spa-Francorchamps had higher fatality rates due to outdated infrastructure.
+
+Reflections
+It was challenging to normalize data across decades due to format inconsistencies. However, visualizing the long-term safety evolution in Formula 1 was incredibly rewarding.
+In future iterations, integrating car telemetry or tire degradation data could enhance the predictive understanding of crash causes.
+          </pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleDetails(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+</script>
+
 
     <!-- Education Section -->
     <section id="education" class="container my-5">
