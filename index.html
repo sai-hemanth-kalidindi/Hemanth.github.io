@@ -970,33 +970,38 @@ In future iterations, integrating car telemetry or tire degradation data could e
       <pre style="white-space: pre-wrap; font-family: inherit; color: white;">
 Title and Objective
 Turbulence in the skies remains one of the leading causes of in-flight injuries and flight disruptions. This project explores: 
-How does air turbulence vary by flight route, time, and atmospheric conditions, and what patterns can help improve aviation safety?
+How frequently does turbulence occur during different flight phases, and what common factors contribute to these incidents?
 The objective is to analyze publicly available aviation incident data to identify trends in turbulence-related incidents, 
 pinpoint high-risk airspaces, and propose predictive measures that can enhance airline safety responses.
 
 Data Sources
-• Source: NOAA’s Aviation Weather Center and NTSB Aviation Accident Database
+• Source: NOAA’s Aviation Weather Center Via Kaggle
 • Format: CSV, historical incident logs
 • Fields Used: Flight date, location, aircraft type, turbulence severity, injuries reported, atmospheric data
 • Tools: Python, Pandas, Matplotlib, Seaborn
 
 
 Methods & Code Snippets
-• Cleaned and merged turbulence incident logs with weather data.
-• Used time-based analysis to examine turbulence frequency by hour and month.
-• Mapped hotspots using latitude/longitude fields and basemap plotting.
-• Developed a simple classification model to predict turbulence risk by route and weather severity.
+•Extracted turbulence-related incidents by flagging records where the narrative contained the keyword "turbulence".
+•Created summary visualizations:
+•Number of reports per year
+•Top flight phases (e.g., cruise, descent) involved in incidents
+•Most frequently mentioned aircraft models
+•Common human factors in all incidents and in turbulence-specific cases
+
 
 Key Insights & Results
-• Turbulence is more frequent during afternoon and evening flights.
-• Peak incidents occur during spring and early summer, aligning with jet stream activity.
-• Routes over mountainous regions (e.g., Rockies, Andes) had the highest severe turbulence reports.
-• Heatmaps identified turbulence clusters near common flight corridors, providing insight for re-routing policies.
+•Most turbulence incidents occurred during cruise and descent phases.
+•Boeing and Airbus aircraft appeared most often in reports, likely due to their large fleet presence.
+•Top human factors included procedural errors, fatigue, and task mismanagement.
+•Turbulence-related reports remained consistent over the past decade, showing persistent operational relevance.
 
 Reflections
-This project required overcoming challenges with merging geospatial weather data and ensuring accurate time zone alignment across flights. 
-It was rewarding to create visual maps that could have real-world safety implications. In the future, I would expand the model to include real-time wind shear and altitude patterns for better risk forecasting.
-      
+Working with narrative-heavy incident data required careful text processing and filtering.
+Extracting structured insights from unstructured fields like Narrative and multi-category variables like Flight Phase was both challenging and rewarding.
+In future iterations, adding geospatial mapping and weather overlays could provide more actionable insights on where and when turbulence risk is highest.
+
+
 <div class="mt-4">
   <h5 style="color:white; margin-bottom: 20px;">📊 Supporting Visualizations</h5>
   <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
